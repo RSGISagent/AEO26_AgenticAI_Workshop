@@ -24,6 +24,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import rasterio  # noqa: E402
+from matplotlib import patheffects  # noqa: E402
 from matplotlib.colors import BoundaryNorm, ListedColormap  # noqa: E402
 from matplotlib.lines import Line2D  # noqa: E402
 from matplotlib.patches import Patch  # noqa: E402
@@ -104,12 +105,55 @@ def add_scale_bar(ax: plt.Axes, n_rows: int, km: int = 5) -> None:
     )
 
 
+def true_north_angle() -> float:
+    """Degrees clockwise from the top of the map to true north, at the study-area centre.
+
+    The rasters use GDA94 / Australian Albers (EPSG:3577), so true north is only straight up
+    along 132 deg E. Here it's about 8 deg clockwise of straight up.
+    """
+    with rasterio.open(DATA / "fire_severity_2019_20.tif") as ds:
+        left, bottom, right, top = ds.bounds
+        crs = ds.crs
+    lon, lat = warp_transform(crs, "EPSG:4326", [(left + right) / 2], [(bottom + top) / 2])
+    xs, ys = warp_transform("EPSG:4326", crs, [lon[0], lon[0]], [lat[0], lat[0] + 0.01])
+    return float(np.degrees(np.arctan2(xs[1] - xs[0], ys[1] - ys[0])))
+
+
+def add_north_arrow(ax: plt.Axes, n_rows: int, angle: float) -> None:
+    """Draw a north arrow pointing to true north in the lower-right corner of a panel."""
+    length = 0.09 * n_rows
+    x0, y0 = 0.93 * n_rows, 0.95 * n_rows  # tail of the arrow (image rows grow downwards)
+    dx, dy = length * np.sin(np.radians(angle)), -length * np.cos(np.radians(angle))
+    ax.annotate(
+        "",
+        xy=(x0 + dx, y0 + dy),
+        xytext=(x0, y0),
+        arrowprops={
+            "arrowstyle": "-|>,head_width=0.45,head_length=0.9",
+            "color": "black",
+            "lw": 2.5,
+            "path_effects": [patheffects.withStroke(linewidth=5, foreground="white")],
+        },
+    )
+    ax.text(
+        x0 + 1.25 * dx,
+        y0 + 1.25 * dy,
+        "N",
+        color="black",
+        ha="center",
+        va="bottom",
+        fontsize=11,
+        fontweight="bold",
+        bbox={"boxstyle": "round,pad=0.2", "facecolor": "white", "alpha": 0.8, "lw": 0},
+    )
+
+
 def caption(fig: plt.Figure, text: str) -> None:
     """Put a one-line source caption under the figure."""
     fig.text(0.5, 0.01, text, ha="center", va="bottom", fontsize=9, color="#444444", wrap=True)
 
 
-def before_after(refl: dict[int, np.ndarray], gliders: tuple[np.ndarray, ...]) -> Path:
+def before_after(refl: dict[int, np.ndarray], gliders: tuple[np.ndarray, ...], north: float) -> Path:
     """Three false-colour panels with one shared 2-98 % stretch per band."""
     rgb = {y: np.stack([r[2], r[1], r[0]], axis=-1) for y, r in refl.items()}  # SWIR1, NIR, red
     stacked = np.concatenate([v.reshape(-1, 3) for v in rgb.values()])
@@ -137,9 +181,10 @@ def before_after(refl: dict[int, np.ndarray], gliders: tuple[np.ndarray, ...]) -
     )
     axes[0].legend(loc="upper right", fontsize=9, framealpha=0.85)
     add_scale_bar(axes[0], refl[2019].shape[1])
+    add_north_arrow(axes[0], refl[2019].shape[1], north)
     fig.suptitle(
         "Tallaganda study area, NSW · false colour: SWIR1 (red), NIR (green), red (blue)"
-        " · burnt forest shows as dark magenta · north is up",
+        " · burnt forest shows as dark magenta",
         fontsize=11,
         y=0.97,
     )
@@ -148,7 +193,7 @@ def before_after(refl: dict[int, np.ndarray], gliders: tuple[np.ndarray, ...]) -
     return save(fig, "before_after.png")
 
 
-def ndvi_change(refl: dict[int, np.ndarray]) -> Path:
+def ndvi_change(refl: dict[int, np.ndarray], north: float) -> Path:
     """Two NDVI-change panels on one diverging scale centred on zero."""
     v = {y: ndvi(r) for y, r in refl.items()}
     panels = {"2019 → 2020: the fire": v[2020] - v[2019], "2020 → 2025: recovery": v[2025] - v[2020]}
@@ -159,15 +204,16 @@ def ndvi_change(refl: dict[int, np.ndarray]) -> Path:
         ax.set_title(title, fontsize=13)
         ax.set_axis_off()
     add_scale_bar(axes[0], v[2019].shape[1])
+    add_north_arrow(axes[0], v[2019].shape[1], north)
     cbar = fig.colorbar(im, ax=axes, orientation="horizontal", fraction=0.05, pad=0.03, aspect=45)
     cbar.set_label("Change in NDVI (no units): brown = less green, green = greener", fontsize=11)
-    fig.suptitle("Tallaganda study area, NSW · change in greenness (NDVI) · north is up", fontsize=12, y=0.98)
+    fig.suptitle("Tallaganda study area, NSW · change in greenness (NDVI)", fontsize=12, y=0.98)
     caption(fig, S2_SOURCE)
     fig.subplots_adjust(left=0.01, right=0.99, top=0.9, bottom=0.24, wspace=0.03)
     return save(fig, "ndvi_change.png")
 
 
-def severity_map(gliders: tuple[np.ndarray, ...]) -> Path:
+def severity_map(gliders: tuple[np.ndarray, ...], north: float) -> Path:
     """Fire-severity classes with the glider records on top: a still view of glider_map.html."""
     with rasterio.open(DATA / "fire_severity_2019_20.tif") as ds:
         fesm = ds.read(1)[::STEP, ::STEP]
@@ -185,6 +231,7 @@ def severity_map(gliders: tuple[np.ndarray, ...]) -> Path:
     ax.scatter(cols[post], rws[post], s=20, marker="^", c=BLUISH_GREEN, edgecolors="black", linewidths=0.5)
     ax.set_axis_off()
     add_scale_bar(ax, fesm.shape[1])
+    add_north_arrow(ax, fesm.shape[1], north)
     handles = [Patch(facecolor=c, edgecolor="#888888", label=lab) for lab, c in SEVERITY.values()]
     handles += [
         Line2D(
@@ -215,9 +262,7 @@ def severity_map(gliders: tuple[np.ndarray, ...]) -> Path:
         title_fontsize=11,
         frameon=False,
     )
-    ax.set_title(
-        "Tallaganda study area, NSW · fire severity and greater glider records · north is up", fontsize=12
-    )
+    ax.set_title("Tallaganda study area, NSW · fire severity and greater glider records", fontsize=12)
     caption(fig, f"{FESM_SOURCE} {ALA_SOURCE}")
     fig.subplots_adjust(left=0.01, right=0.70, top=0.93, bottom=0.06)
     return save(fig, "fire_severity_and_gliders.png")
@@ -248,7 +293,9 @@ def main() -> None:
         f"glider records: {len(gliders[2])}, of which 2000–2019: "
         f"{int(((gliders[2] >= 2000) & (gliders[2] <= 2019)).sum())}"
     )
-    for path in (before_after(refl, gliders), ndvi_change(refl), severity_map(gliders)):
+    north = true_north_angle()
+    print(f"true north: {north:.1f} degrees clockwise of straight up")
+    for path in (before_after(refl, gliders, north), ndvi_change(refl, north), severity_map(gliders, north)):
         print(f"wrote {path.relative_to(ROOT)} ({path.stat().st_size / 1024:.0f} KB)")
 
 

@@ -34,7 +34,7 @@ projection.
   numbers that show the units and ranges are sensible (reflectance 0–1, NDVI −1 to 1). Run the tests.
 - Figures: use colour-blind-safe palettes (viridis or cividis for one variable, a diverging palette
   centred on zero for change, Okabe–Ito colours for categories). Label units, put the year on every
-  panel, keep north up.
+  panel, and give maps a scale bar and a north arrow (pointing to true north).
 - Do area calculations on the rasters' own grid (EPSG:3577, 10 m pixels): one pixel = 0.01 ha.
 - Git: commit each step once it works, with a clear message, then push.
 
