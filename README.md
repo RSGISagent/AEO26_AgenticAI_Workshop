@@ -27,7 +27,7 @@ Click each step in order. Every step ends with a **Next →** link, so you can k
 
 ### Before the day
 
-At home, about 15 minutes. You need a laptop with a web browser, a **personal** Claude account on
+At home, about 20 minutes. You need a laptop with a web browser, a **personal** Claude account on
 the **Pro** plan or higher (the free plan doesn't include Claude Code on the web; Pro is monthly, so
 you can cancel it afterwards: [prices](https://claude.com/pricing)), and a free **personal** GitHub
 account. Please use personal accounts, not work ones: work accounts are often set up to block the
@@ -38,7 +38,8 @@ tools we use, and nobody can change that on the day.
 3. [Make your own private copy of this repo](SETUP.md#3-make-your-own-private-copy-of-this-repo) · 2 min
 4. [Open Claude Code and connect GitHub](SETUP.md#4-open-claude-code-and-connect-github) · 3 min
 5. [Let Claude see your copy, and nothing else](SETUP.md#5-let-claude-see-your-copy-and-nothing-else) · 2 min
-6. [Say hello](SETUP.md#6-say-hello) · 3 min
+6. [Set up your cloud environment](SETUP.md#6-set-up-your-cloud-environment) · 2 min
+7. [Say hello](SETUP.md#7-say-hello) · 3 min
 
 Stuck? See [If something goes wrong](SETUP.md#if-something-goes-wrong).
 
@@ -75,13 +76,14 @@ Afterwards: [after the workshop](WORKBOOK.md#after-the-workshop).
 | [`data/`](data/README.md) | The satellite images, fire severity, land cover and glider records. Read-only |
 | [`outputs/`](outputs/) | Where Claude saves what it makes for you |
 | [`CHECK_VALUES.md`](CHECK_VALUES.md) | The answers to check your results against (Part 2) |
-| [`examples/`](examples/) | Example pictures of what your results should look like, and a presenter's early-task test |
+| [`examples/`](examples/) | Example pictures of what your results should look like, a presenter's early-task test, and screenshots for the setup steps |
 | [`presenters/`](presenters/README.md) | Notes for the presenters. You can ignore this folder |
 
 ## Is it safe?
 
 - Claude works in a disposable computer in the cloud, not on your laptop.
-- That computer can reach package sites and GitHub, but not the rest of the internet.
+- For the workshop you give that computer **Full** network access (setup step 6), so it can
+  download satellite data from any website.
 - Claude can see only the one repo you allow (your private copy). Your GitHub password never goes
   into the cloud computer.
 - Don't paste passwords, keys or private data into Claude.

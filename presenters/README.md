@@ -31,7 +31,8 @@ The previous design asked too much of a 3½-hour morning:
 - **Slow, unpredictable installs.** In tests on 5 Nov, a fresh install of the Python packages in a
   cloud session took anywhere from under a minute to 12 minutes.
 
-What changed: there's no custom environment (the **Default** one is enough), the copy is private,
+What changed: each person makes one simple environment (**Full** network access, no setup
+script), the copy is private,
 and there are 85 minutes of hands-on time (09:35–10:30 and 11:25–11:55) instead of about 45. The
 builds keep running, unattended, between the two sessions.
 
@@ -71,8 +72,8 @@ with their Step 6 brief: an open request can produce something impressive that's
 a clear brief produces something you can trust.
 
 Results in participants' copies will differ from an empty repo. Claude reads `CLAUDE.md` and will
-probably use the Sentinel-2 data in `data/`. The Default environment blocks some download sites, so
-Claude may fall back to the local data. That's fine, and worth pointing out: context shapes what the
+probably use the Sentinel-2 data in `data/`, although with **Full** network access it can also
+download fresh images. Either is fine, and worth pointing out: context shapes what the
 agent does.
 
 `examples/early_task/` holds a later test of a similar request, in a session with no repo and every
@@ -85,7 +86,7 @@ the web page it made, about the January 2025 Los Angeles fires.
 2. In production, go to **Settings → General** and tick **Template repository**. Without this, the
    "Make my private copy" link in SETUP.md doesn't work.
 3. With a **fresh** Pro account and a **fresh** GitHub account, do SETUP.md and time it. The target
-   is under 15 minutes, with no help.
+   is under 20 minutes, with no help.
 4. On that fresh account, note whether **Auto** appears in the mode menu. If it doesn't, people will
    have to approve commands from their phones over morning tea (the workbook covers this).
 5. Do the whole workbook once and time each step against the run sheet. Compare
@@ -94,15 +95,18 @@ the web page it made, about the January 2025 Los Angeles fires.
    Include the early task: two sessions running at the same time use the allowance faster. If it
    gets close, tell people to stop the early-task session (the stop button) once it has made its
    first result.
-   Also run the early task once in a fresh copy with the **Default** environment, and note what it
+   Also run the early task once in a fresh copy with the **AEO** environment (Full network), and note what it
    builds and how long it takes.
 7. Check that *"Send me outputs/before_after.png"* gives a download in a cloud session. If it
    doesn't, delete that line from Step 3.
-8. Send the pre-work email: SETUP.md (about 15 minutes), a personal Pro plan, a personal GitHub
+8. Send the pre-work email: SETUP.md (about 20 minutes), a personal Pro plan, a personal GitHub
    account, and no work accounts.
-9. Optional screenshots for SETUP.md. The most useful five are the "Make my private copy" form; the
-   GitHub app's **Only select repositories** screen; the new-session screen (repo, environment and
-   mode); the mode menu; and the **Changes** card with **Create PR**.
+9. Screenshots for SETUP.md: steps 1, 2 and 4 are in `examples/setup/`. Still to take: the
+   "Make my private copy" form, after ticking **Template repository** (item 2), so it shows the
+   template. Take it with the fresh test account (item 3) so no personal account name shows. Also
+   step 6's environment dialog with **Network access: Full**.
+   Optional: the GitHub app's **Only select repositories** screen, the mode menu, and the
+   **Changes** card with **Create PR**.
 10. On Sunday, do a full dry run with two or three people who don't code.
 
 ## On the day
@@ -129,8 +133,8 @@ Their SHA-256 hashes are in `data/MANIFEST.csv`. The STAC item lists and query d
 `CHECK_VALUES.md` comes from `python presenters/check_values.py`, and the example pictures in
 `examples/` (shown in the README and workbook Steps 3 and 6) come from
 `python presenters/make_examples.py`. Re-run both if anything in `data/` changes. The pictures are
-deliberately close to the "answers": they make the steps easier to follow. The files in `examples/early_task/` aren't
-generated: they're a presenter's own early-task test.
+deliberately close to the "answers": they make the steps easier to follow. The files in `examples/early_task/` and
+`examples/setup/` aren't generated: they're a presenter's own early-task test and setup screenshots.
 
 ## Left out on purpose (still on the staging branch)
 

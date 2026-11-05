@@ -1,20 +1,25 @@
 # Setup before the workshop
 
-It takes **about 15 minutes**. Please do it at home before Monday 9 November, so the morning is about
+It takes **about 20 minutes**. Please do it at home before Monday 9 November, so the morning is about
 learning, not logging in. On the day we start with a quick check, and helpers will sort out anything
 that's stuck.
 
 Use the same web browser for every step, and use **personal** accounts, not work ones.
 
-**Jump to a step:** [1](#1-get-a-claude-pro-plan) · [2](#2-get-a-github-account) · [3](#3-make-your-own-private-copy-of-this-repo) · [4](#4-open-claude-code-and-connect-github) · [5](#5-let-claude-see-your-copy-and-nothing-else) · [6](#6-say-hello) · [If something goes wrong](#if-something-goes-wrong)
+**Jump to a step:** [1](#1-get-a-claude-pro-plan) · [2](#2-get-a-github-account) · [3](#3-make-your-own-private-copy-of-this-repo) · [4](#4-open-claude-code-and-connect-github) · [5](#5-let-claude-see-your-copy-and-nothing-else) · [6](#6-set-up-your-cloud-environment) · [7](#7-say-hello) · [If something goes wrong](#if-something-goes-wrong)
 
 ## 1. Get a Claude Pro plan
 
 *About 5 minutes.*
 
-1. Go to [claude.ai](https://claude.ai) and sign in, or sign up, with your personal email.
+1. Go to [claude.ai](https://claude.ai) and click **Continue with Google**. We recommend a personal
+   Google account, or a spare one you make just for this workshop. Don't use a work account.
 2. Upgrade to **Pro** (or a higher individual plan, such as Max). Pro is a monthly subscription, so
    you can cancel it after the workshop. Prices: [claude.com/pricing](https://claude.com/pricing).
+
+<img src="examples/setup/1_claude_sign_in.png" alt="The claude.ai sign-in page, with Continue with Google at the top" width="600">
+
+*The sign-in page at claude.ai. **Continue with Google** is the first button.*
 
 Have a guest pass from the presenters instead? Open its link and follow the prompts. It gives you a
 7-day Pro trial.
@@ -28,6 +33,10 @@ Have a guest pass from the presenters instead? Open its link and follow the prom
 1. Go to [github.com](https://github.com) and sign up with your personal email. The free plan is
    fine.
 2. Your username is your **handle**. Note it down.
+
+<img src="examples/setup/2_github_sign_up.png" alt="The GitHub sign-up page: email, password, username and country" width="600">
+
+*The GitHub sign-up page. The username you choose here is your handle.*
 
 **Next →** [3. Make your own private copy of this repo](#3-make-your-own-private-copy-of-this-repo) · [All steps](README.md#your-steps)
 
@@ -57,7 +66,19 @@ click **Use this template**, then **Create a new repository**, and fill in the s
 *About 3 minutes.*
 
 1. Go to [claude.ai/code](https://claude.ai/code).
-2. Click **Connect GitHub** and approve it. Check that it shows your personal GitHub account.
+2. On the **Code with Claude anywhere** page, click **Continue with GitHub** and approve it. Check
+   that it shows your personal GitHub account.
+3. Skipped that page? Click **Connect GitHub** on the new-session screen instead.
+
+<img src="examples/setup/4a_connect_github.png" alt="The Code with Claude anywhere page, with a Continue with GitHub button" width="600">
+
+*The first time you open Claude Code, it asks you to connect GitHub.*
+
+<img src="examples/setup/4b_new_session.png" alt="The Claude Code new-session screen, with the Default environment and a Connect GitHub button" width="600">
+
+*The new-session screen before GitHub is connected. The first button under the message box is the
+environment, here **Default**: you'll change it in step 6. The model and mode may differ on your
+account.*
 
 **Next →** [5. Let Claude see your copy, and nothing else](#5-let-claude-see-your-copy-and-nothing-else) · [All steps](README.md#your-steps)
 
@@ -74,14 +95,35 @@ click **Use this template**, then **Create a new repository**, and fill in the s
 **Settings → Applications → Installed GitHub Apps → Claude → Configure**. Add `aeo26-workshop` under
 **Only select repositories**, and click **Save**.
 
-**Next →** [6. Say hello](#6-say-hello) · [All steps](README.md#your-steps)
+**Next →** [6. Set up your cloud environment](#6-set-up-your-cloud-environment) · [All steps](README.md#your-steps)
 
-## 6. Say hello
+## 6. Set up your cloud environment
+
+*About 2 minutes.*
+
+Claude works in a cloud computer that, by default, can reach only a short list of sites, such as
+package sites and GitHub. The workshop needs **Full** network access, so Claude can download
+satellite data.
+
+1. At [claude.ai/code](https://claude.ai/code), click the environment button under the message box
+   (it says **Default**).
+2. At the bottom of the menu, choose **New environment**.
+3. Name it `AEO`.
+4. Click **Network access** and choose **Full**. Leave everything else as it is.
+5. Click **Add environment**.
+
+*Full network access lets Claude reach any website. That's what it needs to fetch data, and it's
+one more reason never to paste passwords, keys or private data into Claude.*
+
+**Next →** [7. Say hello](#7-say-hello) · [All steps](README.md#your-steps)
+
+## 7. Say hello
 
 *About 3 minutes.*
 
 1. At [claude.ai/code](https://claude.ai/code), choose `aeo26-workshop` in the repository list.
-2. Leave the environment as **Default**. There's nothing to set up.
+2. Check that the environment button under the message box says **AEO**. If it doesn't, click it
+   and choose **AEO**.
 3. In the mode menu under the message box, choose **Plan**.
 4. Send: `Hello! In one sentence, what is this repo for?`
 
@@ -103,9 +145,12 @@ If Claude answers, you're done. See you on Monday!
   delete it and repeat step 3 with yourself as the owner.
 - **The first session is slow.** The first start copies your repo into a fresh cloud computer. Give
   it a couple of minutes.
+- **Claude says a website is blocked, or it can't download data.** Check that the session uses your
+  **AEO** environment with **Full** network access (step 6). In a running session, click the arrow
+  next to the session title, then **Edit cloud environment**.
 - **Claude keeps asking for permission.** In **Accept edits** mode it asks before running each
   command. That's normal: read the command, then approve it. **Auto** mode asks much less.
-- **Anything else.** Bring it on the day: helpers fix setups in the first 15 minutes. You can also
+- **Anything else.** Bring it on the day: helpers fix setups when the hands-on starts. You can also
   [open an issue](https://github.com/RSGISagent/AEO26_AgenticAI_Workshop/issues).
 
 Official help: [Claude Code in the cloud](https://code.claude.com/docs/en/claude-code-on-the-web) ·

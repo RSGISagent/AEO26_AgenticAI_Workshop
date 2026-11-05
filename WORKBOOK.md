@@ -48,7 +48,8 @@ your own hardware.
 
 1. Open [claude.ai/code](https://claude.ai/code).
 2. In the repo list, pick **this repo** (`<your-handle>/aeo26-workshop`, marked private).
-3. Leave the environment as **Default**. There's nothing to set up.
+3. Check that the environment button under the message box says **AEO**, the environment you made
+   in [setup step 6](SETUP.md#6-set-up-your-cloud-environment).
 4. Set the mode to **Plan**.
 5. Send: `Hello! In one sentence, what is this repo for?`
 
@@ -72,8 +73,8 @@ with a more critical eye.
 
 **Do this**
 
-1. Go back to [claude.ai/code](https://claude.ai/code) and start a **new session** on this repo. Your
-   first session stays as it is.
+1. Go back to [claude.ai/code](https://claude.ai/code) and start a **new session** on this repo, in
+   your **AEO** environment. Your first session stays as it is.
 2. Set the mode to **Auto**. If **Auto** isn't in the menu, choose **Accept edits**, then check on it
    between steps, because it will wait for you to approve each command.
 3. Paste this exactly as it is, and send it:
@@ -91,8 +92,8 @@ uncluttered. Look out for them in the session as separate blocks of work.
 **Good to know**
 
 - **If it asks you a question,** answer briefly, or say "you choose".
-- **It may try to download more satellite data.** Some websites are blocked in the workshop's cloud
-  computer, so it may use the data in this repo instead. That's fine.
+- **It may download more satellite data.** Your **AEO** environment allows that. It may also use the
+  data in this repo. Either is fine.
 - **If it opens a pull request, don't merge it yet.** Its work stays on its own branch, so it won't
   get in the way of Part 1.
 
