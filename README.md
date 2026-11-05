@@ -44,27 +44,24 @@ Stuck? See [If something goes wrong](SETUP.md#if-something-goes-wrong).
 
 ### On the day
 
-Monday 9 November. Each step opens in the [workbook](WORKBOOK.md).
+Monday 9 November, hands-on 09:35–10:30 and 11:25–12:15. Each step opens in the
+[workbook](WORKBOOK.md).
 
 | Time | Step |
 |---|---|
-| 09:00 | Welcome |
-| 09:10 | [Start: open your session](WORKBOOK.md#start-open-your-session) |
-| 09:15 | [Early task: let Claude surprise you](WORKBOOK.md#early-task-let-claude-surprise-you). It keeps running while you do Part 1 |
+| 09:35 | [Start: open your session](WORKBOOK.md#start-open-your-session) |
+| 09:40 | [Early task: let Claude surprise you](WORKBOOK.md#early-task-let-claude-surprise-you). It keeps running while you do Part 1 |
 | | **Part 1: Claude Code essentials** |
-| 09:25 | [1. Meet the agent](WORKBOOK.md#step-1-meet-the-agent) |
-| 09:35 | [2. Plan before you build](WORKBOOK.md#step-2-plan-before-you-build) |
-| 09:45 | [3. Let it build, and make it check its own work](WORKBOOK.md#step-3-let-it-build-and-make-it-check-its-own-work) |
-| 09:57 | [4. Memory and context](WORKBOOK.md#step-4-memory-and-context) |
-| 10:05 | [5. Review, commit, merge](WORKBOOK.md#step-5-review-commit-merge) |
+| 09:45 | [1. Meet the agent](WORKBOOK.md#step-1-meet-the-agent) |
+| 09:50 | [2. Plan before you build](WORKBOOK.md#step-2-plan-before-you-build) |
+| 09:55 | [3. Let it build, and make it check its own work](WORKBOOK.md#step-3-let-it-build-and-make-it-check-its-own-work) |
+| 10:05 | [4. Memory and context](WORKBOOK.md#step-4-memory-and-context) |
+| 10:10 | [5. Review, commit, merge](WORKBOOK.md#step-5-review-commit-merge) |
 | | **Part 2: A practical build** |
-| 10:15 | [6. Brief it, then walk away](WORKBOOK.md#step-6-brief-it-then-walk-away) |
-| 10:30 | Talk: an agentic research project in practice. Claude keeps building |
-| 10:50 | Morning tea. Check on Claude from your phone, including your early task |
-| 11:20 | [7. Trust, but verify](WORKBOOK.md#step-7-trust-but-verify) |
-| 11:40 | [8. Make it yours](WORKBOOK.md#step-8-make-it-yours), starting with your early task |
-| 11:50 | Talk: sovereign AI, running open AI models on your own hardware |
-| 12:15 | Show-and-tell, and wrap-up |
+| 10:15 | [6. Brief it, then walk away](WORKBOOK.md#step-6-brief-it-then-walk-away). Claude keeps building until 11:25: check on it from your phone, including your early task |
+| 11:25 | [7. Trust, but verify](WORKBOOK.md#step-7-trust-but-verify) |
+| 11:45 | [8. Make it yours](WORKBOOK.md#step-8-make-it-yours), starting with your early task |
+| 11:55 | Talk and demo: sovereign AI, running open AI models on your own hardware |
 
 Afterwards: [after the workshop](WORKBOOK.md#after-the-workshop).
 
@@ -78,7 +75,7 @@ Afterwards: [after the workshop](WORKBOOK.md#after-the-workshop).
 | [`data/`](data/README.md) | The satellite images, fire severity, land cover and glider records. Read-only |
 | [`outputs/`](outputs/) | Where Claude saves what it makes for you |
 | [`CHECK_VALUES.md`](CHECK_VALUES.md) | The answers to check your results against (Part 2) |
-| [`examples/`](examples/) | Example pictures of what your results should look like |
+| [`examples/`](examples/) | Example pictures of what your results should look like, and a presenter's early-task test |
 | [`presenters/`](presenters/README.md) | Notes for the presenters. You can ignore this folder |
 
 ## Is it safe?

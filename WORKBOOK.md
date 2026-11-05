@@ -9,11 +9,14 @@
 **Today you won't write code.** You tell Claude Code what you want, it writes and runs the code,
 and you check the result. Everything happens in **this private repo**, so it all stays yours.
 
-- **Part 1 (09:25–10:15):** the essentials of Claude Code, from the free
+- **Part 1 (09:45–10:15):** the essentials of Claude Code, from the free
   [Claude Academy](https://academy.claude.com) intro courses. One idea at a time, each tried
   straight away on real data.
-- **Part 2 (10:15–11:50):** a practical build. You brief Claude to build a small fire-and-glider
+- **Part 2 (10:15–11:55):** a practical build. You brief Claude to build a small fire-and-glider
   habitat explorer, leave it working over morning tea, then check its work like a supervisor.
+
+**Hands-on times:** 09:35–10:30 and 11:25–12:15, ending with a demo of running open AI models on
+your own hardware.
 
 **Jump to a step:** [Start](#start-open-your-session) · [Early task](#early-task-let-claude-surprise-you) · [1](#step-1-meet-the-agent) · [2](#step-2-plan-before-you-build) · [3](#step-3-let-it-build-and-make-it-check-its-own-work) · [4](#step-4-memory-and-context) · [5](#step-5-review-commit-merge) · [6](#step-6-brief-it-then-walk-away) · [7](#step-7-trust-but-verify) · [8](#step-8-make-it-yours) · [After the workshop](#after-the-workshop)
 
@@ -37,7 +40,7 @@ and you check the result. Everything happens in **this private repo**, so it all
 
 ## Start: open your session
 
-*09:10 · 15 minutes*
+*09:35 · 5 minutes*
 
 **What you'll do:** open your private repo in Claude Code and check that it answers.
 
@@ -59,7 +62,7 @@ note.
 
 ## Early task: let Claude surprise you
 
-*09:15 · 3 minutes to start, then it runs by itself*
+*09:40 · 3 minutes to start, then it runs by itself*
 
 **What you'll do:** give Claude a short, open request in a second session, and leave it working
 while you do Part 1.
@@ -96,6 +99,19 @@ uncluttered. Look out for them in the session as separate blocks of work.
 **You should see:** two sessions in your session list, with the new one busy. Everyone's result
 will be different, and that's the point.
 
+![Screenshot of a Claude Code session: the request at the top, Claude's first steps below it, and the Context panel on the right](examples/early_task/session_start.png)
+
+*A presenter's test of a similar request, a few minutes in, in a session with no repo and every
+website allowed. Before handing work to sub-agents, Claude checks which data sites it can reach,
+installs packages and tests a small download. The **Context** panel on the right shows how much of
+its working memory is in use. Your screen will differ: the model, the numbers and the environment
+name depend on your account.*
+
+**What that test made:** a web page about the January 2025 Los Angeles fires, with a
+before-and-after slider, burn-severity maps, and the code and output for each step. To see it, open
+[`examples/early_task/la_fires_demo.html`](examples/early_task/la_fires_demo.html) on GitHub, click
+**Download raw file**, then open the downloaded file in your browser (about 10 MB).
+
 **Come back to it** at morning tea (have a look from your phone), and in
 [Step 8](#step-8-make-it-yours), where you check it properly.
 
@@ -108,11 +124,11 @@ will be different, and that's the point.
 
 ## Part 1: Claude Code essentials
 
-*09:25–10:15 · five short steps, all in your first session*
+*09:45–10:15 · five short steps, all in your first session*
 
 ### Step 1: Meet the agent
 
-*09:25 · 10 minutes · mode: **Plan***
+*09:45 · 5 minutes · mode: **Plan***
 
 **What you'll do:** ask Claude to explain the repo, and watch how it works it out.
 
@@ -148,7 +164,7 @@ without being told.
 
 ### Step 2: Plan before you build
 
-*09:35 · 10 minutes · mode: **Plan***
+*09:50 · 5 minutes · mode: **Plan***
 
 **What you'll do:** ask for a plan for your first figure, then change the plan before anything is
 built.
@@ -184,7 +200,7 @@ panel. The coordinates are latitude/longitude, so reproject them to the rasters'
 
 ### Step 3: Let it build, and make it check its own work
 
-*09:45 · 12 minutes · mode: **Accept edits***
+*09:55 · 10 minutes · mode: **Accept edits***
 
 **What you'll do:** let Claude build the figure, then make it check its own result.
 
@@ -229,7 +245,7 @@ and the Claude Code [best practices](https://code.claude.com/docs/en/best-practi
 
 ### Step 4: Memory and context
 
-*09:57 · 8 minutes · mode: **Accept edits***
+*10:05 · 5 minutes · mode: **Accept edits***
 
 **What you'll do:** look at Claude's working memory, then add a standing rule that it follows from
 now on.
@@ -273,7 +289,7 @@ Claude Code in Action,
 
 ### Step 5: Review, commit, merge
 
-*10:05 · 10 minutes · mode: **Accept edits***
+*10:10 · 5 minutes · mode: **Accept edits***
 
 **What you'll do:** read what Claude changed, then add it to your project.
 
@@ -315,7 +331,7 @@ them in Step 8.
 
 ## Part 2: A practical build
 
-*10:15–11:50 · a fire-and-glider habitat explorer*
+*10:15–11:55 · a fire-and-glider habitat explorer*
 
 ### Step 6: Brief it, then walk away
 
@@ -389,7 +405,7 @@ and ["Permission modes"](https://academy.claude.com/courses/claude-code-in-actio
 
 ### Step 7: Trust, but verify
 
-*11:20 · 20 minutes · mode: **Plan**, then **Accept edits***
+*11:25 · 20 minutes · mode: **Plan**, then **Accept edits***
 
 **What you'll do:** check the work you didn't watch, then merge it.
 
@@ -436,7 +452,7 @@ Claude Code 101, ["Code review"](https://academy.claude.com/courses/claude-code-
 
 ### Step 8: Make it yours
 
-*11:40 · 10 minutes*
+*11:45 · 10 minutes*
 
 **What you'll do:** pick one thing to try, and write the prompt in your own words. You know what a
 good brief looks like now.

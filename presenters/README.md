@@ -6,8 +6,9 @@
 
 This one small repo is the whole workshop. Each participant clicks **Use this template** to make a
 private copy, and Claude Code works in their copy. Part 1 teaches the essentials of Claude Code from
-the Claude Academy intro courses. Each idea is shown for 3–4 minutes, then tried for 6–7. Part 2 is a
-practical build that runs over morning tea and is checked afterwards. The analysis is deliberately
+the Claude Academy intro courses. Each idea is shown on the shared screen and tried
+straight away, in about 5 minutes. Part 2 is a practical build that runs over morning tea and is
+checked afterwards. The analysis is deliberately
 simple (indices, areas, counts). What participants practise is planning, checking and reviewing.
 
 ## Why it's this simple (sanity check, 5 Nov 2026)
@@ -31,34 +32,33 @@ The previous design asked too much of a 3½-hour morning:
   cloud session took anywhere from under a minute to 12 minutes.
 
 What changed: there's no custom environment (the **Default** one is enough), the copy is private,
-and the run sheet has about 110 minutes of hands-on time instead of about 45. The talks drop from 80
-minutes to 45.
+and there are 85 minutes of hands-on time (09:35–10:30 and 11:25–11:55) instead of about 45. The
+builds keep running, unattended, between the two sessions.
 
-## Run sheet (09:00–12:30, including a 30-minute morning tea)
+## Run sheet (hands-on: 09:35–10:30 and 11:25–12:15)
+
+The builds run unattended between the two sessions, from 10:30 to 11:25. People can check on them
+from their phones.
 
 | Time | Min | What | Workbook |
 |---|---|---|---|
-| 09:00 | 10 | Welcome, Acknowledgement of Country, goals, safety on one slide, the "three levels of agency" in 2 minutes | |
-| 09:10 | 15 | Setup check: everyone does SETUP.md step 6, then launches the early task in a second session (Auto). Helpers fix the rest. Anyone blocked pairs up | Start, Early task |
-| 09:25 | 50 | **Part 1: Claude Code essentials.** Five ideas, each shown for 3–4 minutes, then tried for 6–7 | Steps 1–5 |
+| 09:35 | 10 | **Hands-on, session 1** (led on a shared screen). Everyone opens a session, then launches the early task in a second session (Auto). Helpers fix setup problems; anyone blocked pairs up | Start, Early task |
+| 09:45 | 30 | **Part 1: Claude Code essentials.** Five ideas, each shown and tried in about 5 minutes (Step 3 gets 10) | Steps 1–5 |
 | 10:15 | 15 | **Part 2: brief the build.** Plan, review, switch to **Auto**, first push | Step 6 |
-| 10:30 | 20 | Talk P2: an agentic research project in practice (cut from 25) | Claude is building |
-| 10:50 | 30 | *Morning tea.* People check their session on their phones | Claude is building |
-| 11:20 | 20 | **Trust, but verify:** read the changes, compare with CHECK_VALUES.md, fresh-eyes review, fix, merge | Step 7 |
-| 11:40 | 10 | **Make it yours:** come back to the early task first, then one extension, or a stretch task for coders | Step 8 |
-| 11:50 | 25 | Talk P4: sovereign AI (live demo, then the decision matrix) | |
-| 12:15 | 15 | Two or three show-and-tells, wrap-up, exit poll | |
+| 11:25 | 20 | **Hands-on, session 2. Trust, but verify:** read the changes, compare with CHECK_VALUES.md, fresh-eyes review, fix, merge | Step 7 |
+| 11:45 | 10 | **Make it yours:** come back to the early task first, then one extension, or a stretch task for coders | Step 8 |
+| 11:55 | 20 | Sovereign AI: running open AI models on your own hardware (presentation and live demo) | |
 
-**If you're running late,** cut in this order: Step 8 becomes homework; P2 drops to 10 minutes;
-Step 4 becomes a demo only; one show-and-tell instead of three. **Never cut** launching Step 6
-before morning tea, or Step 7.
+**If you're running late,** cut in this order. Before morning tea: Step 4 becomes a demo on the
+shared screen, then skip the line comment in Step 5. In session 2: Step 8 becomes homework.
+**Never cut** launching Step 6 before morning tea, or Step 7.
 
 **Backup:** at 08:00 on the day, one presenter runs Step 6 in their own copy. If live builds fail,
-show that pull request at 11:20.
+show that pull request at 11:25.
 
 ## The early task (added 5 Nov)
 
-At 09:15, people paste an open one-line request into a second session and leave it running in
+At 09:40, people paste an open one-line request into a second session and leave it running in
 **Auto** while they do Part 1:
 
 > i want to use python to create a remote sensing demonstration with sentinel data from australia.
@@ -74,6 +74,10 @@ Results in participants' copies will differ from an empty repo. Claude reads `CL
 probably use the Sentinel-2 data in `data/`. The Default environment blocks some download sites, so
 Claude may fall back to the local data. That's fine, and worth pointing out: context shapes what the
 agent does.
+
+`examples/early_task/` holds a later test of a similar request, in a session with no repo and every
+website allowed: a screenshot from early in the session (shown in the workbook's early task) and
+the web page it made, about the January 2025 Los Angeles fires.
 
 ## Before Monday: checklist
 
@@ -125,7 +129,8 @@ Their SHA-256 hashes are in `data/MANIFEST.csv`. The STAC item lists and query d
 `CHECK_VALUES.md` comes from `python presenters/check_values.py`, and the example pictures in
 `examples/` (shown in the README and workbook Steps 3 and 6) come from
 `python presenters/make_examples.py`. Re-run both if anything in `data/` changes. The pictures are
-deliberately close to the "answers": they make the steps easier to follow.
+deliberately close to the "answers": they make the steps easier to follow. The files in `examples/early_task/` aren't
+generated: they're a presenter's own early-task test.
 
 ## Left out on purpose (still on the staging branch)
 
@@ -135,7 +140,5 @@ Only bring one back if there's time to test it before Monday.
 
 ## Still to decide
 
-- Whether to cut talks P1 and P3. P1's framing fits into the welcome, and P3 isn't needed for the
-  build.
 - A licence for the code and text. The live repo has no `LICENSE` file yet, which means people
   can read it but not reuse it. The data keep their own licences (`data/ATTRIBUTION.md`).
