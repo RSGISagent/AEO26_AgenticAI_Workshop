@@ -1,0 +1,58 @@
+{
+  "source": "Atlas of Living Australia biocache-ws occurrence search",
+  "endpoint": "https://biocache-ws.ala.org.au/ws/occurrences/search",
+  "taxon": "Petauroides volans",
+  "queries": [
+    {
+      "query_url": "https://biocache-ws.ala.org.au/ws/occurrences/search?q=taxa%3A%22Petauroides+volans%22&wkt=POLYGON%28%28149.43871+-35.63685%2C149.81217+-35.63685%2C149.81217+-35.33229%2C149.43871+-35.33229%2C149.43871+-35.63685%29%29&fl=id%2Coccurrence_date%2Cyear%2Cmonth%2Clatitude%2Clongitude%2Ccoordinate_uncertainty%2Cbasis_of_record%2Cdata_resource%2Cdata_resource_uid%2Clicense%2Csensitive%2Cdata_generalizations%2Cinformation_withheld%2Cgeneralisation_to_apply_in_metres%2Cstate%2Ctaxon_name%2Craw_taxon_name%2Coccurrence_status%2Cidentification_verification_status&sort=id&dir=asc&facet=false",
+      "query_params": {
+        "q": "taxa:\"Petauroides volans\"",
+        "wkt": "POLYGON((149.43871 -35.63685,149.81217 -35.63685,149.81217 -35.33229,149.43871 -35.33229,149.43871 -35.63685))",
+        "fl": "id,occurrence_date,year,month,latitude,longitude,coordinate_uncertainty,basis_of_record,data_resource,data_resource_uid,license,sensitive,data_generalizations,information_withheld,generalisation_to_apply_in_metres,state,taxon_name,raw_taxon_name,occurrence_status,identification_verification_status",
+        "sort": "id",
+        "dir": "asc",
+        "facet": "false"
+      },
+      "accessed_utc": "2026-11-05T02:35:03+00:00",
+      "total_records_reported": 968,
+      "records_retrieved": 968,
+      "aoi": "A",
+      "bbox_lonlat_buffered_5km": [
+        149.43871,
+        -35.63685,
+        149.81217,
+        -35.33229
+      ]
+    },
+    {
+      "query_url": "https://biocache-ws.ala.org.au/ws/occurrences/search?q=taxa%3A%22Petauroides+volans%22&wkt=POLYGON%28%28149.27763+-36.2734%2C149.65304+-36.2734%2C149.65304+-35.9686%2C149.27763+-35.9686%2C149.27763+-36.2734%29%29&fl=id%2Coccurrence_date%2Cyear%2Cmonth%2Clatitude%2Clongitude%2Ccoordinate_uncertainty%2Cbasis_of_record%2Cdata_resource%2Cdata_resource_uid%2Clicense%2Csensitive%2Cdata_generalizations%2Cinformation_withheld%2Cgeneralisation_to_apply_in_metres%2Cstate%2Ctaxon_name%2Craw_taxon_name%2Coccurrence_status%2Cidentification_verification_status&sort=id&dir=asc&facet=false",
+      "query_params": {
+        "q": "taxa:\"Petauroides volans\"",
+        "wkt": "POLYGON((149.27763 -36.2734,149.65304 -36.2734,149.65304 -35.9686,149.27763 -35.9686,149.27763 -36.2734))",
+        "fl": "id,occurrence_date,year,month,latitude,longitude,coordinate_uncertainty,basis_of_record,data_resource,data_resource_uid,license,sensitive,data_generalizations,information_withheld,generalisation_to_apply_in_metres,state,taxon_name,raw_taxon_name,occurrence_status,identification_verification_status",
+        "sort": "id",
+        "dir": "asc",
+        "facet": "false"
+      },
+      "accessed_utc": "2026-11-05T02:35:10+00:00",
+      "total_records_reported": 477,
+      "records_retrieved": 477,
+      "aoi": "B",
+      "bbox_lonlat_buffered_5km": [
+        149.27763,
+        -36.2734,
+        149.65304,
+        -35.9686
+      ]
+    }
+  ],
+  "n_records_retrieved_unique": 1445,
+  "n_records_excluded_non_commercial": 30,
+  "excluded_licences": {
+    "CC-BY-NC 4.0 (Int)": 28,
+    "CC-BY-NC-SA 4.0 (Int)": 2
+  },
+  "n_records_unique": 1415,
+  "citation": "Atlas of Living Australia occurrence records for Petauroides volans, accessed via the ALA biocache web services on 2026-11-05. Queries: https://biocache-ws.ala.org.au/ws/occurrences/search?q=taxa%3A%22Petauroides+volans%22&wkt=POLYGON%28%28149.43871+-35.63685%2C149.81217+-35.63685%2C149.81217+-35.33229%2C149.43871+-35.33229%2C149.43871+-35.63685%29%29&fl=id%2Coccurrence_date%2Cyear%2Cmonth%2Clatitude%2Clongitude%2Ccoordinate_uncertainty%2Cbasis_of_record%2Cdata_resource%2Cdata_resource_uid%2Clicense%2Csensitive%2Cdata_generalizations%2Cinformation_withheld%2Cgeneralisation_to_apply_in_metres%2Cstate%2Ctaxon_name%2Craw_taxon_name%2Coccurrence_status%2Cidentification_verification_status&sort=id&dir=asc&facet=false; https://biocache-ws.ala.org.au/ws/occurrences/search?q=taxa%3A%22Petauroides+volans%22&wkt=POLYGON%28%28149.27763+-36.2734%2C149.65304+-36.2734%2C149.65304+-35.9686%2C149.27763+-35.9686%2C149.27763+-36.2734%29%29&fl=id%2Coccurrence_date%2Cyear%2Cmonth%2Clatitude%2Clongitude%2Ccoordinate_uncertainty%2Cbasis_of_record%2Cdata_resource%2Cdata_resource_uid%2Clicense%2Csensitive%2Cdata_generalizations%2Cinformation_withheld%2Cgeneralisation_to_apply_in_metres%2Cstate%2Ctaxon_name%2Craw_taxon_name%2Coccurrence_status%2Cidentification_verification_status&sort=id&dir=asc&facet=false. https://www.ala.org.au. Individual records remain under the licence of their data resource (column license).",
+  "notes": "Coordinates are the public ALA coordinates. Records flagged sensitive are generalised by the data provider (see sensitive / dataGeneralizations / generalisationToApplyInMetres); no attempt was made to obtain un-generalised coordinates. Each record keeps its own licence (column license). Records licensed CC BY-NC or CC BY-NC-SA were excluded and are not redistributed."
+}

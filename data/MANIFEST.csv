@@ -1,0 +1,14 @@
+file,bytes,sha256,source,licence
+sentinel2_2019.tif,20826522,c577403e3aa43228e66dab7e225932af3f65ea916239f30a1811fe77193182c8,AEO26 data package s2/A_2019.tif (exact copy),CC BY 4.0
+sentinel2_2020.tif,21127970,a6542e16ab2c385fe1c6c9a68aa620af896b16adbd7d8a66c1382d75b137c3c8,AEO26 data package s2/A_2020.tif (exact copy),CC BY 4.0
+sentinel2_2025.tif,20836669,e5fc76e0abcdcb3a73db58ddba07f1c6191c299a2cf2919fbf9cb41d929961c9,AEO26 data package s2/A_2025.tif (exact copy),CC BY 4.0
+fire_severity_2019_20.tif,505479,3f3dfc96e1c0849d0202ad6f24fc6fe24a8d6318301cb6ddbaea993b89e3442d,AEO26 data package labels/A_fesm_2019_20.tif (exact copy),Creative Commons Attribution (CC BY; version not stated in the record)
+land_cover_2020.tif,206864,40b639ea813a0a4722b10b0f6820d8ee550060ee8706d7a594587a8a19606e53,AEO26 data package labels/A_worldcover_2020.tif (exact copy),CC BY 4.0
+glider_records.csv,73349,d3c669a1b9954fa5daa7937010e83055ac62145af931427c895cc5871158e4f3,"AEO26 data package species/glider_ala.csv: the 551 records inside the study area; non-commercial (CC BY-NC, CC BY-NC-SA) records removed; columns renamed","Per record (column licence): CC BY 4.0, CC BY 3.0 AU or CC0"
+study_area.geojson,9139,ecaf3e89ce98fce90fddfe735cff3e66ac9e742fefe29c506f41a7a8b03c1a32,AEO26 data package aoi/aois.geojson: study-area outline only,See ATTRIBUTION.md
+provenance/A_2019_items.csv,11397,059aa663fe8c909f5f6ad2955cdfc331853cff29eab9b29474be49075d8e6310,AEO26 data package s2/A_2019_items.csv: Sentinel-2 scenes used (exact copy),Provenance record (see ATTRIBUTION.md)
+provenance/A_2020_items.csv,10791,b670e480a322efbf09e8b63338010a9c80212092ebd9415b08c544a0b74edf8c,AEO26 data package s2/A_2020_items.csv: Sentinel-2 scenes used (exact copy),Provenance record (see ATTRIBUTION.md)
+provenance/A_2025_items.csv,13148,d563803dd67a1f90401b1b40ed9a424ec96a2d7629168f22674dce73763a28b8,AEO26 data package s2/A_2025_items.csv: Sentinel-2 scenes used (exact copy),Provenance record (see ATTRIBUTION.md)
+provenance/fesm_2019_20_provenance.json,3416,ce776ab40de17ea5a6201204449e0d5706864355b5e8222269586500a3d63a7b,AEO26 data package labels/fesm_2019_20_provenance.json (exact copy),Provenance record (see ATTRIBUTION.md)
+provenance/labels_provenance.json,4111,abf3643de3ce8574c956a3331539806cd17128b0b1eabd42aa5b6b02ac0fab08,AEO26 data package labels/labels_provenance.json (exact copy),Provenance record (see ATTRIBUTION.md)
+provenance/glider_ala_query.json,5137,13f5bd70b88a0a94db115bc2fda73e35f849b1c774dcf3fe19cbf688bff84aba,AEO26 data package species/glider_ala_query.json (exact copy),Provenance record (see ATTRIBUTION.md)

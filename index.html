@@ -1,290 +1,60 @@
-<!DOCTYPE html>
-<html lang="en-AU">
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Practical and Sovereign AI for Earth Observation — AEO26 Workshop</title>
-<meta name="description" content="A hands-on agentic coding workshop at the Advancing Earth Observation Forum 2026, Nipaluna/Hobart — Monday 9 November 2026. Vibe coding, agentic tool use and autonomous agents with Australian remote sensing and GIS case studies.">
+<title>Practical and Sovereign AI for Earth Observation · AEO26 workshop</title>
+<meta name="description" content="A hands-on agentic coding workshop at AEO26, Nipaluna/Hobart, Monday 9 November 2026.">
 <style>
-  :root {
-    --blue: #006394;
-    --crimson: #BF2B4D;
-    --pale: #EAEAEE;
-    --ink: #272727;
-    --muted: #6e6e6e;
-    --heading-font: "Lucida Sans Unicode", "Lucida Grande", "Segoe UI", -apple-system, sans-serif;
-    --body-font: "Source Sans 3", "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { font-family: var(--body-font); color: var(--ink); background: #fff; line-height: 1.6; font-size: 1.05rem; }
-  h1, h2, h3, h4 { font-family: var(--heading-font); font-weight: 400; line-height: 1.4; }
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.7rem; margin-bottom: 1rem; }
-  h3 { font-size: 1.3rem; margin: 1.5rem 0 .5rem; }
-  a { color: var(--blue); }
-  p { margin-bottom: 1rem; }
-
-  /* Header */
-  header {
-    position: sticky; top: 0; z-index: 50;
-    background: #fff; border-bottom: 1px solid #e4e4e4;
-    padding: .9rem 5%;
-    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  }
-  .wordmark { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
-  .wordmark svg { height: 44px; width: 44px; flex: none; }
-  .wordmark-text { font-family: var(--heading-font); }
-  .wordmark-text .big { color: var(--blue); font-size: 1.25rem; letter-spacing: .02em; }
-  .wordmark-text .small { display: block; color: var(--crimson); font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; }
-  nav a { margin-left: 1.4rem; text-decoration: none; color: var(--ink); font-size: .95rem; }
-  nav a:hover { color: var(--blue); }
-  @media (max-width: 720px) { nav { display: none; } }
-
-  /* Hero */
-  .hero {
-    position: relative; color: #fff; text-align: center;
-    padding: 7rem 6% 6rem; overflow: hidden;
-  }
-  .hero-bg { position: absolute; inset: 0; z-index: -2; }
-  .hero-bg svg { width: 100%; height: 100%; display: block; }
-  .hero::after { content: ""; position: absolute; inset: 0; background: #000; opacity: .38; z-index: -1; }
-  .hero h1 { color: #fff; font-weight: 700; margin-bottom: .6rem; text-shadow: 0 1px 8px rgba(0,0,0,.45); }
-  .hero .sub { font-size: 1.15rem; margin: 1rem auto 2rem; max-width: 46rem; text-shadow: 0 1px 6px rgba(0,0,0,.5); }
-  .btn {
-    display: inline-block; background: var(--crimson); color: #fff;
-    padding: .8rem 1.6rem; margin: .3rem .4rem; text-decoration: none;
-    font-size: 1rem; border-radius: 2px;
-  }
-  .btn:hover { filter: brightness(1.1); }
-  .btn.ghost { background: transparent; border: 1.5px solid #fff; }
-
-  /* Sections */
-  section { padding: 3.5rem 6%; }
-  .inner { max-width: 60rem; margin: 0 auto; }
-  .dark { background: #0e0e0e; color: #f6f6f6; }
-  .dark h2 { color: #fff; }
-  .dark a { color: #8fd0f0; }
-  .pale-band { background: var(--pale); }
-  .lead { font-size: 1.2rem; }
-  .center { text-align: center; }
-
-  /* Cards */
-  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin: 1.6rem 0; }
-  .card { background: #fff; border-top: 4px solid var(--blue); padding: 1.3rem; box-shadow: 0 1px 6px rgba(0,0,0,.08); }
-  .dark .card { background: #1c1c1c; border-top-color: var(--crimson); }
-  .card h3 { margin-top: 0; font-size: 1.1rem; color: var(--blue); }
-  .dark .card h3 { color: #8fd0f0; }
-  .card .emoji { font-size: 1.6rem; display: block; margin-bottom: .4rem; }
-
-  /* Tables */
-  .tablewrap { overflow-x: auto; margin: 1.2rem 0; }
-  table { border-collapse: collapse; width: 100%; background: #fff; font-size: .97rem; }
-  th, td { border: 1px solid #d0d0d0; padding: .6rem .8rem; text-align: left; vertical-align: top; }
-  th { background: var(--blue); color: #fff; font-weight: 600; }
-  tr:nth-child(even) td { background: #fafafa; }
-
-  /* Callout */
-  .warn {
-    border-left: 5px solid var(--crimson); background: #fff;
-    padding: 1.2rem 1.4rem; margin: 1.5rem 0; box-shadow: 0 1px 6px rgba(0,0,0,.08);
-  }
-  .warn h3 { margin-top: 0; color: var(--crimson); }
-
-  .steps { counter-reset: step; list-style: none; margin: 1rem 0 1.5rem; }
-  .steps li { counter-increment: step; margin: .7rem 0; padding-left: 2.4rem; position: relative; }
-  .steps li::before {
-    content: counter(step); position: absolute; left: 0; top: .1rem;
-    width: 1.7rem; height: 1.7rem; border-radius: 50%;
-    background: var(--blue); color: #fff; font-size: .95rem;
-    display: flex; align-items: center; justify-content: center;
-  }
-
-  footer { background: #0e0e0e; color: #c4c4c4; padding: 2.5rem 6%; font-size: .92rem; text-align: center; }
-  footer a { color: #8fd0f0; }
-  footer p { max-width: 52rem; margin: 0 auto .8rem; }
+  body { font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #1f2328; margin: 0; }
+  main { max-width: 46rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+  h1 { font-size: 1.9rem; line-height: 1.25; margin: 0 0 .25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2rem; }
+  .when { font-weight: 600; }
+  .btn { display: inline-block; background: #1a7f37; color: #fff; padding: .6rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600; margin: .25rem .5rem .25rem 0; }
+  .btn.alt { background: #0969da; }
+  table { border-collapse: collapse; width: 100%; }
+  td { border-top: 1px solid #d0d7de; padding: .4rem .5rem; vertical-align: top; }
+  td:first-child { white-space: nowrap; font-weight: 600; width: 4.5rem; }
+  footer { color: #57606a; font-size: .95rem; border-top: 1px solid #d0d7de; margin-top: 2.5rem; padding-top: 1rem; }
+  a { color: #0969da; }
 </style>
 </head>
 <body>
-
-<header>
-  <a class="wordmark" href="#top" aria-label="AEO26 Agentic AI Workshop">
-    <!-- Original wireframe-globe mark, inspired by satellite ground tracks -->
-    <svg viewBox="0 0 64 64" fill="none" stroke="#006394" stroke-width="1.1" aria-hidden="true">
-      <circle cx="32" cy="32" r="26" opacity=".9"/>
-      <ellipse cx="32" cy="32" rx="26" ry="10" opacity=".55"/>
-      <ellipse cx="32" cy="32" rx="26" ry="19" opacity=".4"/>
-      <ellipse cx="32" cy="32" rx="10" ry="26" opacity=".55"/>
-      <ellipse cx="32" cy="32" rx="19" ry="26" opacity=".4"/>
-      <ellipse cx="32" cy="32" rx="26" ry="15" transform="rotate(28 32 32)" stroke="#BF2B4D" opacity=".7"/>
-      <circle cx="55" cy="20" r="2" fill="#BF2B4D" stroke="none"/>
-      <circle cx="12" cy="44" r="2" fill="#006394" stroke="none"/>
-    </svg>
-    <span class="wordmark-text">
-      <span class="big">Agentic AI Workshop</span>
-      <span class="small">AEO Forum 2026 &middot; Nipaluna/Hobart</span>
-    </span>
-  </a>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#prereqs">Prerequisites</a>
-    <a href="#learn">Free training</a>
-    <a href="#coursework">Coursework</a>
-    <a href="https://www.earthobsforum.org/">AEO26 ↗</a>
-  </nav>
-</header>
-
-<div class="hero" id="top">
-  <div class="hero-bg" aria-hidden="true">
-    <!-- Original abstract landscape in false-colour satellite palette -->
-    <svg viewBox="0 0 1200 560" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <linearGradient id="land" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#9dbe2e"/>
-          <stop offset=".55" stop-color="#6f9a1f"/>
-          <stop offset="1" stop-color="#42641a"/>
-        </linearGradient>
-        <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#c8d94a"/>
-          <stop offset="1" stop-color="#7fa32a"/>
-        </linearGradient>
-      </defs>
-      <rect width="1200" height="560" fill="url(#land)"/>
-      <path d="M0 90 Q180 30 340 95 T700 70 T1060 110 L1200 80 V0 H0 Z" fill="url(#ridge)" opacity=".8"/>
-      <path d="M0 200 Q220 150 430 210 T880 190 T1200 230 V120 Q1000 90 780 140 T360 130 T0 150 Z" fill="#b5cf3d" opacity=".5"/>
-      <!-- dark estuary water, Derwent-like -->
-      <path d="M480 560 C520 430 470 350 560 290 C640 240 700 260 760 210 C820 165 830 90 900 40 L980 0 L1200 0 V560 Z" fill="#0b1420"/>
-      <path d="M540 560 C575 455 535 370 610 315 C675 268 725 280 780 235" stroke="#16283c" stroke-width="22" fill="none" opacity=".8"/>
-      <!-- field patchwork -->
-      <g opacity=".35">
-        <rect x="60"  y="300" width="90" height="60" fill="#d3e050"/>
-        <rect x="160" y="330" width="70" height="80" fill="#89a82c"/>
-        <rect x="90"  y="380" width="110" height="70" fill="#c2d23f"/>
-        <rect x="230" y="290" width="80" height="55" fill="#e0e86a"/>
-        <rect x="250" y="360" width="95" height="85" fill="#7d9c26"/>
-        <rect x="1050" y="360" width="90" height="70" fill="#d3e050"/>
-        <rect x="990"  y="420" width="120" height="80" fill="#8fae2f"/>
-      </g>
-      <!-- satellite track + node dots -->
-      <path d="M-20 480 Q300 360 620 420 T1220 350" stroke="#ffffff" stroke-width="1.2" stroke-dasharray="2 7" fill="none" opacity=".6"/>
-      <circle cx="620" cy="420" r="3.5" fill="#fff" opacity=".85"/>
-      <circle cx="300" cy="404" r="2.5" fill="#fff" opacity=".6"/>
-      <circle cx="950" cy="372" r="2.5" fill="#fff" opacity=".6"/>
-    </svg>
-  </div>
+<main>
   <h1>Practical and Sovereign AI for Earth Observation</h1>
-  <h1>A hands-on agentic coding workshop</h1>
-  <h1>Monday 9 November 2026 &middot; 9:00 am &ndash; 12:30 pm</h1>
-  <p class="sub">At the <strong>2026 Advancing Earth Observation Forum</strong>, Nipaluna/Hobart, Lutruwita/Tasmania. Bring a laptop with a browser, or the Claude mobile app — that's it.</p>
-  <a class="btn" href="https://claude.ai">Create a free Claude account</a>
-  <a class="btn ghost" href="https://www.earthobsforum.org/registration">Register for AEO26 ↗</a>
-</div>
+  <p>A hands-on agentic coding workshop at <a href="https://www.earthobsforum.org/">AEO26</a></p>
+  <p class="when">Monday 9 November 2026 · 9:00 am – 12:30 pm · Nipaluna/Hobart, Lutruwita/Tasmania</p>
 
-<section id="about">
-  <div class="inner">
-    <h2>What you'll learn</h2>
-    <p class="lead">A practical, hands-on introduction to agentic AI for remote sensing, GIS and Earth observation — taught entirely with <strong>Australian environmental case studies and open data</strong>. You'll leave having actually driven an AI agent, not just watched one.</p>
-    <div class="cards">
-      <div class="card"><span class="emoji">🏄</span><h3>Vibe coding</h3><p>Describe the outcome in plain language and let the model write, run and fix the code. Build a working geospatial analysis from a prompt — no coding experience required.</p></div>
-      <div class="card"><span class="emoji">🛠️</span><h3>Agentic tool use</h3><p>Give the model tools — search, code execution, files, APIs — and let it decide when to use them. Chain tools to turn open satellite and environmental data into maps and answers.</p></div>
-      <div class="card"><span class="emoji">🤖</span><h3>Autonomous agents</h3><p>Set a goal, walk away, verify what the agent did — safely, inside a sandbox. Run a browser-based autonomous agent on a real remote-sensing task, then audit its work.</p></div>
-    </div>
-    <p>Case studies draw on open Australian data — <a href="https://www.dea.ga.gov.au/">Digital Earth Australia</a>, <a href="https://dataspace.copernicus.eu/">Copernicus/Sentinel</a>, <a href="https://www.ga.gov.au/">Geoscience Australia</a>, <a href="https://www.tern.org.au/">TERN</a> and the <a href="https://www.ala.org.au/">Atlas of Living Australia</a> — across vegetation, biodiversity, land cover and disaster resilience. The session also includes a segment on running <strong>open-weights models on local hardware</strong>: sovereign AI you can hold in your hand.</p>
-    <p><strong>Presenters:</strong> Adam Roff (Senior Research Scientist, Vegetation &amp; Biodiversity Mapping, DCCEEW NSW) and Fang Yuan (Earth Observation Australia), with guest speakers to be announced. <em>Program details are draft and subject to change until the official AEO26 program is published.</em></p>
-  </div>
-</section>
+  <p>Learn to work with an AI coding agent, Claude Code, by building something real with it. You describe what you want in plain English, the agent writes and runs the code, and you check the result. You don't need any coding experience. If you do code, there are harder tasks for you.</p>
+  <p>The example uses open Australian data: Sentinel-2 satellite images from before, just after and five years after the 2019–20 Black Summer fires near Braidwood, NSW, with fire-severity mapping and greater glider records.</p>
 
-<section class="dark">
-  <div class="inner center">
-    <h2>This is a holding page</h2>
-    <p class="lead">Full coursework, notebooks and hands-on exercises will be published in this repository before the conference. Watch the repo to be notified.</p>
-    <a class="btn" href="https://github.com/RSGISagent/AEO26_AgenticAI_Workshop">Watch on GitHub</a>
-  </div>
-</section>
+  <h2>Before you arrive (about 15 minutes)</h2>
+  <p>You need a laptop with a web browser, a <strong>personal</strong> Claude account on the <strong>Pro</strong> plan or higher (the free plan doesn't include Claude Code on the web; <a href="https://claude.com/pricing">prices</a>), and a free <strong>personal</strong> GitHub account. Then follow the setup guide. In six short steps you make your own <strong>private copy</strong> of the workshop repo.</p>
+  <p>
+    <a class="btn" href="https://github.com/RSGISagent/AEO26_AgenticAI_Workshop/blob/main/SETUP.md">Setup guide</a>
+    <a class="btn alt" href="https://github.com/RSGISagent/AEO26_AgenticAI_Workshop">Workshop repo</a>
+  </p>
+  <p>Please use personal accounts, not work ones, and use the browser rather than the Claude Desktop app. No paid plan? Pair up with a neighbour on the day.</p>
 
-<section class="pale-band" id="prereqs">
-  <div class="inner">
-    <h2>Before you arrive — the only two prerequisites</h2>
-    <p class="lead">Please do these <strong>before the day</strong>, so we spend our time doing, not registering.</p>
+  <h2>On the day</h2>
+  <table>
+    <tr><td>09:00</td><td>Welcome, and a quick setup check</td></tr>
+    <tr><td>09:25</td><td><strong>Part 1:</strong> the essentials of Claude Code, from the free <a href="https://academy.claude.com">Claude Academy</a> intro courses, each tried straight away</td></tr>
+    <tr><td>10:15</td><td><strong>Part 2:</strong> brief Claude to build a fire-and-glider habitat explorer. It keeps working through a talk and morning tea</td></tr>
+    <tr><td>11:20</td><td>Check its work like a supervisor, then make it your own</td></tr>
+    <tr><td>11:50</td><td>Sovereign AI: running open AI models on your own hardware</td></tr>
+    <tr><td>12:15</td><td>Show-and-tell, and wrap-up</td></tr>
+  </table>
 
-    <h3>1 · Create a Claude account (free is fine)</h3>
-    <ol class="steps">
-      <li>Go to <a href="https://claude.ai"><strong>claude.ai</strong></a></li>
-      <li>Sign up with your email (you'll get a verification link), or use Google/Apple sign-in</li>
-      <li>Done — no credit card required, and the free tier doesn't expire</li>
-    </ol>
-    <div class="tablewrap">
-      <table>
-        <tr><th>Plan</th><th>Cost</th><th>Enough for this workshop?</th></tr>
-        <tr><td><strong>Free</strong></td><td>$0</td><td><strong>Yes.</strong> Chat, web search, file creation, code execution and artifacts on web and mobile — everything the hands-on exercises use.</td></tr>
-        <tr><td><strong>Pro</strong></td><td>US$20/mo<br>(US$17/mo annual)</td><td>Optional. Much higher limits plus <strong>Claude Code</strong>, the terminal/cloud agentic coding tool — for going deeper after the workshop.</td></tr>
-        <tr><td><strong>Max</strong></td><td>from US$100/mo</td><td>For heavy daily users; not needed here.</td></tr>
-      </table>
-    </div>
-    <p>Full plan details: <a href="https://claude.com/pricing">claude.com/pricing</a></p>
+  <h2>Want a head start? (optional, free)</h2>
+  <p><a href="https://academy.claude.com/courses/claude-code-101">Claude Code 101</a> (1.5 hours) and <a href="https://academy.claude.com/courses/claude-code-in-action">Claude Code in Action</a> (1 hour). New to AI tools? Try <a href="https://academy.claude.com/courses/claude-101">Claude 101</a>.</p>
 
-    <h3>2 · Bring a browser, or install the mobile app</h3>
-    <p>Any modern browser on a laptop works — just log in at <a href="https://claude.ai">claude.ai</a>. Or install the official app:</p>
-    <p>
-      🍎 <a href="https://apps.apple.com/us/app/claude-by-anthropic/id6473753684">Claude for iOS / iPadOS</a> &nbsp;·&nbsp;
-      🤖 <a href="https://play.google.com/store/apps/details?id=com.anthropic.claude">Claude for Android</a> &nbsp;·&nbsp;
-      all platforms at <a href="https://claude.com/download">claude.com/download</a>
-    </p>
-
-    <div class="warn">
-      <h3>⚠️ Please don't use the Claude Desktop app for this workshop</h3>
-      <p>The desktop app is powerful precisely because it works directly on your machine: it reads and modifies local files, and its agentic modes act with the same permissions as your own user account. That's wonderful on a dedicated machine — and risky on the laptop that holds your email, credentials and department documents, especially while you're learning what autonomous agents do.</p>
-      <p>Use it only on a <strong>dedicated or disposable machine</strong>, or if you have <strong>experience sandboxing autonomous agents</strong> (containers, VMs, permission modes — see Anthropic's <a href="https://code.claude.com/docs/en/sandbox-environments">guide to sandbox environments</a>). Everything in this workshop runs in the browser or mobile app, where the agent operates inside Anthropic's sandbox, not on your machine. That boundary is one of the things we'll be teaching.</p>
-    </div>
-  </div>
-</section>
-
-<section id="learn">
-  <div class="inner">
-    <h2>Pre-workshop learning — free training from Anthropic</h2>
-    <p class="lead">The <a href="https://www.anthropic.com/learn">Anthropic Academy</a> offers free, self-paced courses, most with a certificate of completion. Nothing here is required — but it's an excellent warm-up. Pick your track.</p>
-
-    <h3>🌱 Absolute beginners <span style="font-weight:400;font-size:.85em;color:var(--muted)">(free Claude account is enough)</span></h3>
-    <div class="tablewrap">
-      <table>
-        <tr><th>Course</th><th>Time</th><th>What it covers</th></tr>
-        <tr><td><a href="https://anthropic.skilljar.com/ai-fluency-framework-foundations">AI Fluency: Framework &amp; Foundations</a></td><td>~3–4 h</td><td><strong>Start here.</strong> The 4D framework — Delegation, Description, Discernment, Diligence — for working with AI effectively and safely. No coding required. Also <a href="https://www.coursera.org/learn/ai-fluency-framework-foundations">free on Coursera</a>.</td></tr>
-        <tr><td><a href="https://anthropic.skilljar.com/ai-capabilities-and-limitations">AI Capabilities and Limitations</a></td><td>11 modules</td><td>An honest mental model of what language models can and can't do, and why — the best inoculation against both hype and fear.</td></tr>
-        <tr><td><a href="https://anthropic.skilljar.com/claude-101">Claude 101</a></td><td>14 lessons</td><td>A practical tour of Claude: first conversations, Projects, Artifacts, file handling and research tools. Ideal the week before the workshop.</td></tr>
-        <tr><td><a href="https://github.com/anthropics/prompt-eng-interactive-tutorial">Prompt Engineering Interactive Tutorial</a> (ch.&nbsp;1–3)</td><td>~1–2 h</td><td>Hands-on exercises in writing clear, structured prompts — the skill that underpins vibe coding.</td></tr>
-      </table>
-    </div>
-
-    <h3>🚀 More advanced users <span style="font-weight:400;font-size:.85em;color:var(--muted)">(developers, or anyone with a Pro plan)</span></h3>
-    <div class="tablewrap">
-      <table>
-        <tr><th>Course</th><th>Time</th><th>What it covers</th></tr>
-        <tr><td><a href="https://anthropic.skilljar.com/claude-code-101">Claude Code 101</a></td><td>8 modules</td><td>Introduction to agentic coding with Claude Code: the agent loop and the Explore → Plan → Code → Commit workflow. <em>Requires Pro or an API key.</em></td></tr>
-        <tr><td><a href="https://anthropic.skilljar.com/claude-code-in-action">Claude Code in Action</a></td><td>14 modules</td><td><strong>Closest to this workshop's heart:</strong> long unsupervised agent runs, permission modes, hooks, and verifying work you didn't watch happen.</td></tr>
-        <tr><td><a href="https://anthropic.skilljar.com/claude-with-the-anthropic-api">Building with the Claude API</a></td><td>11 sections</td><td>The flagship developer course — API fundamentals, tool use, retrieval, and agents vs. workflows. Python assumed.</td></tr>
-        <tr><td><a href="https://anthropic.skilljar.com/introduction-to-model-context-protocol">Introduction to Model Context Protocol</a></td><td>4 sections</td><td>Build MCP servers that give agents new tools — how you'd wire an agent to your own geospatial data services. <a href="https://anthropic.skilljar.com/model-context-protocol-advanced-topics">Advanced topics</a> follows on.</td></tr>
-        <tr><td><a href="https://anthropic.skilljar.com/introduction-to-agent-skills">Agent Skills</a> · <a href="https://anthropic.skilljar.com/introduction-to-subagents">Subagents</a></td><td>4–6 modules each</td><td>Packaging expertise so agents apply it automatically, and delegating work across multiple agents.</td></tr>
-        <tr><td><a href="https://github.com/anthropics/courses">anthropics/courses</a></td><td>self-paced</td><td>Jupyter-notebook deep dives: API fundamentals, real-world prompting, prompt evaluations and tool use.</td></tr>
-      </table>
-    </div>
-    <p>On agent safety and sandboxing — the theme running through the whole workshop — see Anthropic's docs on <a href="https://code.claude.com/docs/en/sandbox-environments">choosing a sandbox environment</a> and <a href="https://code.claude.com/docs/en/claude-code-on-the-web">Claude Code on the web</a>.</p>
-  </div>
-</section>
-
-<section class="dark" id="coursework">
-  <div class="inner center">
-    <h2>Coursework — coming soon</h2>
-    <p class="lead">Notebooks, sandbox exercises and Australian open-data case studies will be published in the <a href="https://github.com/RSGISagent/AEO26_AgenticAI_Workshop">coursework folder of this repository</a> before 9 November 2026.</p>
-    <a class="btn" href="https://ti.to/earth-observation-australia/aeo-forum-2026">AEO26 tickets ↗</a>
-    <p style="margin-top:1rem;font-size:.95rem;color:#c4c4c4">Workshop tickets are purchased separately — conference registration is not required to attend a workshop.</p>
-  </div>
-</section>
-
-<footer>
-  <p>We acknowledge the First Nations peoples of Australia as the original observers of our Earth, and the Muwinina people, traditional owners of the land on which AEO26 gathers in Nipaluna/Hobart.</p>
-  <p>This is the companion page for a workshop at the <a href="https://www.earthobsforum.org/">2026 Advancing Earth Observation Forum</a>, hosted by Earth Observation Australia Inc. It is not the official forum website — see <a href="https://www.earthobsforum.org/">earthobsforum.org</a> for the official program and registration.</p>
-  <p>Questions? <a href="https://github.com/RSGISagent/AEO26_AgenticAI_Workshop/issues">Open an issue on GitHub</a>.</p>
-</footer>
-
+  <footer>
+    <p><strong>Presenters:</strong> Adam Roff (Senior Research Scientist, Vegetation &amp; Biodiversity Mapping, DCCEEW NSW) and Fang Yuan (Earth Observation Australia), with guest speakers to be announced. The program is a draft until the official AEO26 program is published. <a href="https://ti.to/earth-observation-australia/aeo-forum-2026">Tickets</a> (workshop tickets are sold separately).</p>
+    <p>We acknowledge the First Nations peoples of Australia as the original observers of our Earth, and the Muwinina people, traditional owners of the land on which AEO26 gathers in Nipaluna/Hobart.</p>
+    <p>This is the companion page for a workshop at the 2026 Advancing Earth Observation Forum, hosted by Earth Observation Australia Inc. It is not the official forum website. Questions? <a href="https://github.com/RSGISagent/AEO26_AgenticAI_Workshop/issues">Open an issue on GitHub</a>.</p>
+  </footer>
+</main>
 </body>
 </html>

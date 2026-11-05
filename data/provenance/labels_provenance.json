@@ -1,0 +1,106 @@
+{
+ "A": {
+  "worldcover_2020": {
+   "urls": [
+    "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v100/2020/map/ESA_WorldCover_10m_2020_v100_S36E147_Map.tif"
+   ],
+   "accessed": "2026-11-05"
+  },
+  "worldcover_2021": {
+   "urls": [
+    "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_S36E147_Map.tif"
+   ],
+   "accessed": "2026-11-05"
+  },
+  "dea_landcover": {
+   "years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "n_items": 8,
+   "accessed": "2026-11-05"
+  },
+  "hansen_treecover2000": {
+   "url": "https://storage.googleapis.com/earthenginepartners-hansen/GFC-2024-v1.12/Hansen_GFC-2024-v1.12_treecover2000_30S_140E.tif",
+   "accessed": "2026-11-05"
+  },
+  "hansen_lossyear": {
+   "url": "https://storage.googleapis.com/earthenginepartners-hansen/GFC-2024-v1.12/Hansen_GFC-2024-v1.12_lossyear_30S_140E.tif",
+   "accessed": "2026-11-05"
+  },
+  "copdem": {
+   "urls": [
+    "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S36_00_E149_00_DEM/Copernicus_DSM_COG_10_S36_00_E149_00_DEM.tif"
+   ],
+   "accessed": "2026-11-05"
+  },
+  "nfswvd": {
+   "sources": [
+    "https://data.gov.au/data/en/dataset/b166b550-94be-433d-a0b6-03e8bf3cd03d/resource/7d96b71e-c2ef-428d-a484-8872fd459cf8/download/si56_woody_8823.zip#woody18.tif",
+    "https://data.gov.au/data/en/dataset/b166b550-94be-433d-a0b6-03e8bf3cd03d/resource/7d96b71e-c2ef-428d-a484-8872fd459cf8/download/si56_woody_8823.zip#woody19.tif",
+    "https://data.gov.au/data/en/dataset/b166b550-94be-433d-a0b6-03e8bf3cd03d/resource/7d96b71e-c2ef-428d-a484-8872fd459cf8/download/si56_woody_8823.zip#woody20.tif",
+    "https://data.gov.au/data/en/dataset/b166b550-94be-433d-a0b6-03e8bf3cd03d/resource/7d96b71e-c2ef-428d-a484-8872fd459cf8/download/si56_woody_8823.zip#woody22.tif",
+    "https://data.gov.au/data/en/dataset/b166b550-94be-433d-a0b6-03e8bf3cd03d/resource/7d96b71e-c2ef-428d-a484-8872fd459cf8/download/si56_woody_8823.zip#woody23.tif"
+   ],
+   "accessed": "2026-11-05"
+  }
+ },
+ "B": {
+  "worldcover_2020": {
+   "urls": [
+    "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v100/2020/map/ESA_WorldCover_10m_2020_v100_S39E147_Map.tif"
+   ],
+   "accessed": "2026-11-05"
+  },
+  "worldcover_2021": {
+   "urls": [
+    "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_S39E147_Map.tif"
+   ],
+   "accessed": "2026-11-05"
+  },
+  "dea_landcover": {
+   "years": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+   ],
+   "n_items": 8,
+   "accessed": "2026-11-05"
+  },
+  "hansen_treecover2000": {
+   "url": "https://storage.googleapis.com/earthenginepartners-hansen/GFC-2024-v1.12/Hansen_GFC-2024-v1.12_treecover2000_30S_140E.tif",
+   "accessed": "2026-11-05"
+  },
+  "hansen_lossyear": {
+   "url": "https://storage.googleapis.com/earthenginepartners-hansen/GFC-2024-v1.12/Hansen_GFC-2024-v1.12_lossyear_30S_140E.tif",
+   "accessed": "2026-11-05"
+  },
+  "copdem": {
+   "urls": [
+    "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_S37_00_E149_00_DEM/Copernicus_DSM_COG_10_S37_00_E149_00_DEM.tif"
+   ],
+   "accessed": "2026-11-05"
+  },
+  "nfswvd": {
+   "sources": [
+    "https://data.gov.au/data/en/dataset/b166b550-94be-433d-a0b6-03e8bf3cd03d/resource/12a502ce-8136-4786-9dcc-c1fd6c2ea9f5/download/sj55_woody_8823.zip#woody18.tif",
+    "https://data.gov.au/data/en/dataset/b166b550-94be-433d-a0b6-03e8bf3cd03d/resource/12a502ce-8136-4786-9dcc-c1fd6c2ea9f5/download/sj55_woody_8823.zip#woody19.tif",
+    "https://data.gov.au/data/en/dataset/b166b550-94be-433d-a0b6-03e8bf3cd03d/resource/12a502ce-8136-4786-9dcc-c1fd6c2ea9f5/download/sj55_woody_8823.zip#woody20.tif",
+    "https://data.gov.au/data/en/dataset/b166b550-94be-433d-a0b6-03e8bf3cd03d/resource/12a502ce-8136-4786-9dcc-c1fd6c2ea9f5/download/sj55_woody_8823.zip#woody22.tif",
+    "https://data.gov.au/data/en/dataset/b166b550-94be-433d-a0b6-03e8bf3cd03d/resource/12a502ce-8136-4786-9dcc-c1fd6c2ea9f5/download/sj55_woody_8823.zip#woody23.tif"
+   ],
+   "accessed": "2026-11-05"
+  }
+ }
+}

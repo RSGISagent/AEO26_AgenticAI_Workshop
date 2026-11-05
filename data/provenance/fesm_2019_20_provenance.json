@@ -1,0 +1,73 @@
+{
+ "dataset_page": "https://datasets.seed.nsw.gov.au/dataset/fire-extent-and-severity-mapping-fesm-2019-20",
+ "api": "https://data.nsw.gov.au/data/api/3/action/package_show?id=fire-extent-and-severity-mapping-fesm-2019-20",
+ "accessed": "2026-11-05",
+ "title": "Fire Extent and Severity Mapping (FESM) 2019/20",
+ "license_id": "cc-by",
+ "license_title": "Creative Commons Attribution",
+ "license_url": "http://www.opendefinition.org/licenses/cc-by",
+ "organization": "NSW Department of Climate Change, Energy, the Environment and Water",
+ "metadata_modified": "2026-10-02T20:18:25.352648",
+ "notes": "Fire severity is a metric of the loss of biomass caused by fire. In collaboration with the NSW Rural Fire Service, DPE Remote Sensing & Regulatory Mapping team has developed a semi-automated approach to mapping fire extent and severity through a machine learning framework based on sentinel 2 satellite imagery. The statewide severity map has standardised classes to allow comparison of different fires across the landscape. The FESM severity classes include: unburnt, low severity (burnt understory, unburnt canopy), moderate severity (partial canopy scorch), high severity (complete canopy scorch, partial canopy consumption), extreme (full canopy consumption).\r\n\r\nThis dataset represents the 2019/20 fire year including all wildfires >10ha with a fire start date between July 2019 and June 2020.\r\n",
+ "resources": [
+  {
+   "name": "Data Quality Statement",
+   "format": "PDF",
+   "url": "https://datasets.seed.nsw.gov.au/dataset/fire-extent-and-severity-mapping-fesm-2019-20/resource/data_quality_report/pdf"
+  },
+  {
+   "name": "NSW Fire Extent and Severity Mapping (FESMv3) Factsheet ",
+   "format": "PDF",
+   "url": "https://datasets.seed.nsw.gov.au/dataset/f7eb3f73-5831-4cc9-8259-8d1f210214ac/resource/1ee94f00-6681-410f-af89-14d5bd208eca/download/fireextentandseveritymapping_fesmv3_factsheet_december2020.docx.pdf"
+  },
+  {
+   "name": "Data Download Package",
+   "format": "ZIP",
+   "url": "https://datasets.seed.nsw.gov.au/dataset/f7eb3f73-5831-4cc9-8259-8d1f210214ac/resource/51106786-6f4c-4383-a3c5-5ae59b397e0e/download/fireseverityfesm.zip"
+  },
+  {
+   "name": "Data Download Package",
+   "format": "ZIP",
+   "url": "https://datasets.seed.nsw.gov.au/dataset/f7eb3f73-5831-4cc9-8259-8d1f210214ac/resource/c284598a-24e9-48aa-9d47-c81ef2eb9b5f/download/fesmimgtif.zip"
+  },
+  {
+   "name": "ArcGIS REST Service",
+   "format": "ARCGIS REST SERVICE",
+   "url": "https://mapprod3.environment.nsw.gov.au/arcgis/rest/services/Fire/FESM_2016_2021/MapServer/4"
+  }
+ ],
+ "mapserver_layer": "https://mapprod3.environment.nsw.gov.au/arcgis/rest/services/Fire/FESM_2016_2021/MapServer/4",
+ "method": "MapServer export (format=png32, bboxSR=imageSR=3577, size = AOI grid) of the rendered 2019-20 severity layer; legend colours decoded back to class codes; checked against the MapServer identify operation at random pixel centres.",
+ "aois": {
+  "A": {
+   "unmatched_pixels": 0,
+   "class_counts": {
+    "0": 1916252,
+    "2": 307431,
+    "3": 540598,
+    "4": 467854,
+    "5": 767865
+   },
+   "identify_check": {
+    "n": 60,
+    "agree": 60,
+    "agreement": 1.0
+   }
+  },
+  "B": {
+   "unmatched_pixels": 0,
+   "class_counts": {
+    "0": 1316459,
+    "2": 332119,
+    "3": 526426,
+    "4": 677554,
+    "5": 1147442
+   },
+   "identify_check": {
+    "n": 60,
+    "agree": 60,
+    "agreement": 1.0
+   }
+  }
+ }
+}
