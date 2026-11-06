@@ -529,7 +529,7 @@ Tallaganda project. The files in data/ are for Tallaganda only, and so is CLAUDE
 pixel rule: work out areas from each image's own pixel size. Follow CLAUDE.md's figure and
 checking rules.
 
-Question: [your question, with a rule for anything you count, such as "water covers more than 1 km²"]
+Question: [your question, with a rule for anything you count, such as "over 1 km² of water"]
 Place: [a place name, or a box in longitude and latitude]
 Dates: [the dates or seasons to compare: a handful, not dozens]
 Data: open data only, such as Sentinel-2 from Digital Earth Australia
