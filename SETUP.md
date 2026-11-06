@@ -97,7 +97,12 @@ account.*
 2. Choose your personal account.
 3. Choose **Only select repositories**, pick `aeo26-workshop`, and install.
 
-<img src="examples/setup/5_github_connector.png" alt="The GitHub page in Claude's settings, with a Connect button for your account and an Install on GitHub button for the Claude GitHub App" width="600">
+   <img src="examples/setup/5a_repository_access.png" alt="GitHub's Repository access settings for the Claude app: Only select repositories, with one repository selected" width="600">
+
+   *Only select repositories, with one repository picked. Yours will say `<your-handle>/aeo26-workshop`.
+   This account already had the app, so its button says **Save**.*
+
+<img src="examples/setup/5b_github_connector.png" alt="The GitHub page in Claude's settings, with a Connect button for your account and an Install on GitHub button for the Claude GitHub App" width="600">
 
 *The same two steps in Claude's settings, on the GitHub page under **Your connectors**: **Connect**
 links your GitHub account (step 4), and **Install on GitHub** installs the app (this step). Without
