@@ -42,7 +42,28 @@ come from a short, separate script written by the presenters
 That class isn't all forest: about 60 % of it is grassland in ESA WorldCover 2020 (mostly cleared
 grazing land, in the east of the study area) and about 40 % is tree cover. What else changed in
 eastern Australia between autumn 2019 and autumn 2020 that could green up pasture? Ask Claude to
-split the class by land cover (Step 8), then check its explanation against a source you trust.
+split the class by land cover (an extension in the workbook's [More to try](WORKBOOK.md#more-to-try)),
+then check its explanation against a source you trust.
+
+**Something else to discuss: what do the glider counts mean?** The *high* class has the most
+records from 2000–2019, but the classes differ in size and in how much forest they hold. Per
+1,000 ha of tree cover (ESA WorldCover 2020), the records before the fire were:
+
+| Fire severity | Area (ha) | Tree cover | Glider records 2000–2019 on tree cover | Per 1,000 ha of tree cover |
+|---|---:|---:|---:|---:|
+| unburnt / outside | 19,163 | 40 % | 11 | 1.4 |
+| low | 3,074 | 81 % | 10 | 4.0 |
+| moderate | 5,406 | 89 % | 41 | 8.5 |
+| high | 4,679 | 95 % | 63 | 14.2 |
+| extreme | 7,679 | 93 % | 29 | 4.0 |
+
+So, before the fire, gliders were recorded most often in forest that later burnt at high severity.
+That tells you about the forest the fire reached, not that gliders favour fire. After the fire,
+records jump from 1 in 2019 to 74 in 2020 and 124 in 2024: people went looking. These are
+presence-only records (sightings, with no record of where people looked and found none), so a
+count shows survey effort as much as where gliders live
+([Phillips et al. 2009](https://doi.org/10.1890/07-2153.1)). Keep that in mind for the
+*Since the fire* extension.
 
 ## Re-create these numbers
 

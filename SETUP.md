@@ -6,7 +6,7 @@ that's stuck.
 
 Use the same web browser for every step, and use **personal** accounts, not work ones.
 
-**Jump to a step:** [1](#1-get-a-claude-pro-plan) · [2](#2-get-a-github-account) · [3](#3-make-your-own-private-copy-of-this-repo) · [4](#4-open-claude-code-and-connect-github) · [5](#5-let-claude-see-your-copy-and-nothing-else) · [6](#6-set-up-your-cloud-environment) · [7](#7-say-hello) · [If something goes wrong](#if-something-goes-wrong)
+**Jump to a step:** [1](#1-get-a-claude-pro-plan) · [2](#2-get-a-github-account) · [3](#3-make-your-own-private-copy-of-this-repo) · [4](#4-open-claude-code-and-connect-github) · [5](#5-let-claude-see-your-copy-and-nothing-else) · [6](#6-set-up-your-cloud-environment) · [7](#7-say-hello) · [8](#8-bring-a-question-from-your-own-work) · [If something goes wrong](#if-something-goes-wrong)
 
 ## 1. Get a Claude Pro plan
 
@@ -171,9 +171,28 @@ one more reason never to paste passwords, keys or private data into Claude.*
 *A working session. The panel on the right shows the **AEO** environment and your copy, and Claude
 has read the repo. (This test sent `hello world`: any short message works.)*
 
-If Claude answers, you're done. See you on Monday!
+If Claude answers, it works. One last thing, and it doesn't need a computer: step 8.
 
-**All done!** On the day, start with the [workbook](WORKBOOK.md#start-open-your-session). · [All steps](README.md#your-steps)
+**Next →** [8. Bring a question from your own work](#8-bring-a-question-from-your-own-work) · [All steps](README.md#your-steps)
+
+## 8. Bring a question from your own work
+
+*About 2 minutes.*
+
+At the end of the workshop, you'll ask Claude about a question from your own work, using open
+satellite data. Have one ready:
+
+- **A question** that open data could help answer. For example: "How much has the canopy recovered
+  at my field sites since the 2019–20 fires?", "Where has this wetland held water since 2017?" or
+  "Has NDVI in this woodland changed since 2016?"
+- **A place:** a place name, or a rough box in longitude and latitude.
+- **Dates:** the dates or seasons to compare.
+- **Something you already know** about that place, to check Claude's answer against.
+
+Keep it small: one place, one question, one figure. Use open data only: the workbook explains why.
+
+**All done!** See you on Monday. On the day, start with the
+[workbook](WORKBOOK.md#start-open-your-session). · [All steps](README.md#your-steps)
 
 ---
 

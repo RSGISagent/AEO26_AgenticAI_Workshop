@@ -8,7 +8,7 @@ Lutruwita/Tasmania**
 **What you'll do:** learn to work with an AI coding agent, Claude Code, by building something real
 with it. You describe what you want in plain English, the agent writes and runs the code, and you
 check the result. You don't need any coding experience. If you do code, there are harder tasks for
-you.
+you. You finish by trying it on a question from your own work, with open data.
 
 <p align="center">
   <a href="SETUP.md"><img src=".github/readme/setup.svg" alt="Setup: before the day, about 20 minutes at home" width="380"></a>
@@ -46,13 +46,14 @@ tools we use, and nobody can change that on the day.
 5. [Let Claude see your copy, and nothing else](SETUP.md#5-let-claude-see-your-copy-and-nothing-else) · 2 min
 6. [Set up your cloud environment](SETUP.md#6-set-up-your-cloud-environment) · 2 min
 7. [Say hello](SETUP.md#7-say-hello) · 3 min
+8. [Bring a question from your own work](SETUP.md#8-bring-a-question-from-your-own-work) · 2 min
 
 Stuck? See [If something goes wrong](SETUP.md#if-something-goes-wrong).
 
 ### On the day
 
-Monday 9 November, hands-on 09:35–10:30 and 11:25–12:15. Each step opens in the
-[workbook](WORKBOOK.md).
+Monday 9 November, hands-on 09:35–10:30 and 11:25–11:55, then a closing talk and demo. Each step
+opens in the [workbook](WORKBOOK.md).
 
 | Time | Step |
 |---|---|
@@ -67,8 +68,8 @@ Monday 9 November, hands-on 09:35–10:30 and 11:25–12:15. Each step opens in 
 | | **Part 2: A practical build** |
 | 10:15 | [6. Brief it, then walk away](WORKBOOK.md#step-6-brief-it-then-walk-away). Claude keeps building until 11:25: check on it from your phone, including your early task |
 | 11:25 | [7. Trust, but verify](WORKBOOK.md#step-7-trust-but-verify) |
-| 11:45 | [8. Make it yours](WORKBOOK.md#step-8-make-it-yours), starting with your early task |
-| 11:55 | Talk and demo: sovereign AI, running open AI models on your own hardware |
+| 11:45 | [8. Make it yours](WORKBOOK.md#step-8-make-it-yours): brief Claude on a question from your own work |
+| 11:55 | Talk and demo: sovereign AI, running open AI models on your own hardware. Your Step 8 brief keeps working |
 
 Afterwards: [after the workshop](WORKBOOK.md#after-the-workshop).
 

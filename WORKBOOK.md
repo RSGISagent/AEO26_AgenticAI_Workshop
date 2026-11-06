@@ -14,9 +14,10 @@ and you check the result. Everything happens in **this private repo**, so it all
   straight away on real data.
 - **Part 2 (10:15–11:55):** a practical build. You brief Claude to build a small fire-and-glider
   habitat explorer, leave it working over morning tea, then check its work like a supervisor.
+  Last, you brief it on a question from your own work.
 
-**Hands-on times:** 09:35–10:30 and 11:25–12:15, ending with a demo of running open AI models on
-your own hardware.
+**Hands-on times:** 09:35–10:30 and 11:25–11:55. Your last brief keeps working through the closing
+talk and demo (11:55–12:15) on running open AI models on your own hardware.
 
 **Jump to a step:** [Start](#start-open-your-session) · [Early task](#early-task-let-claude-surprise-you) · [1](#step-1-meet-the-agent) · [2](#step-2-plan-before-you-build) · [3](#step-3-let-it-build-and-make-it-check-its-own-work) · [4](#step-4-memory-and-context) · [5](#step-5-review-commit-merge) · [6](#step-6-brief-it-then-walk-away) · [7](#step-7-trust-but-verify) · [8](#step-8-make-it-yours) · [After the workshop](#after-the-workshop)
 
@@ -36,9 +37,30 @@ your own hardware.
   in the menu: we don't use it today, because it stops to ask before every command.
 
 - **"You should see"** tells you what success looks like. The pictures are example results: yours
-  will differ a little, and that's fine. In the room, put up a 🟩 sticky note if you're there, or 🟥
-  if you're stuck.
+  will differ a little, and that's fine. In the room, put up a sticky note marked **✓** when you're
+  there, or **?** if you're stuck.
 - **"If you code"** lines are optional extras.
+
+**It's safe to experiment**
+
+- Nothing you do today touches your laptop. Claude works in a cloud computer that holds only your
+  private copy of this repo.
+- Claude saves its work in Git, your repo's history, so a change can be undone.
+- Press the stop button at any time. If a session gets muddled, start a new one: your repo keeps
+  everything that was saved.
+- Mistakes are part of the plan. You're the remote sensing expert; Claude is a fast junior analyst
+  who needs supervising. Catching its errors is the skill you're here to practise.
+
+**Useful things to say to Claude**
+
+| Say | When |
+|---|---|
+| "Plan only." | Before anything big: see the plan before anything changes |
+| "What did you assume?" | After any result |
+| "Show me the command you ran and what it printed." | When you want evidence, not just "done" |
+| "Explain that in plain English." | Whenever something is unclear |
+| "Check that against …" | To compare with a number or a source you trust |
+| "Undo that." | When a change went the wrong way |
 
 ---
 
@@ -55,13 +77,18 @@ your own hardware.
 3. Check that the environment button under the message box says **AEO**, the environment you made
    in [setup step 6](SETUP.md#6-set-up-your-cloud-environment).
 4. Set the mode to **Auto**.
-5. Send: `Hello! In one sentence, what is this repo for?`
+5. Send:
+
+```text
+Hello! In one sentence, what is this repo for? Then install the Python packages in requirements.txt, so they're ready for later.
+```
 
 **You should see:** a reply within a minute or two. The first start takes longer while the cloud
-computer copies your repo.
+computer copies your repo. The packages can take a few more minutes: start the early task while it
+works.
 
-**Stuck?** See [If something goes wrong](SETUP.md#if-something-goes-wrong), or put up a 🟥 sticky
-note.
+**Stuck?** See [If something goes wrong](SETUP.md#if-something-goes-wrong), or put up a sticky note
+marked **?**.
 
 **Next →** [Early task: let Claude surprise you](#early-task-let-claude-surprise-you) · [All steps](README.md#your-steps)
 
@@ -128,8 +155,9 @@ step.*
 (a 6.7 MB zip file). Open the zip, then double-click `blue_mountains_demo.html`. It opens in your
 browser and works offline.
 
-**Come back to it** at morning tea (have a look from your phone), and in
-[Step 8](#step-8-make-it-yours), where you check it properly.
+**Come back to it** at morning tea (have a look from your phone). In
+[Step 8](#step-8-make-it-yours) you compare it with your Step 6 build, and you can check it
+properly after the workshop.
 
 **Learn more:** Claude Code 101,
 ["Your first prompt"](https://academy.claude.com/courses/claude-code-101/your-first-prompt).
@@ -232,9 +260,10 @@ stop and say what you want instead.
 The plan is good. Build it.
 ```
 
-2. Watch it work. It installs packages, writes the script and runs it without stopping to ask.
-   Click a grey block to see the exact command it ran and what it printed.
-3. Then ask it to check its work:
+2. Watch it work. It writes the script and runs it without stopping to ask. Click a grey block to
+   see the exact command it ran and what it printed.
+3. Before you look at the figure, decide what you expect: where should the fire scar be in 2020,
+   and how should it look in this false colour? Then ask Claude to check its work:
 
 ```text
 Open outputs/before_after.png and check it critically: are the three panels comparable, labelled
@@ -279,7 +308,8 @@ task deserves a fresh session.
 /context
 ```
 
-2. Then send:
+2. Then send this. If you like, change the words in quotes to a rule of your own: something you
+   always want in your figures, such as the projection, or your lab's colours.
 
 ```text
 Add this rule to CLAUDE.md under "Rules": "Every figure gets a one-line caption underneath that
@@ -288,8 +318,10 @@ names the data sources and dates." Then re-run before_after.py so the figure fol
 
 **You should see**
 
-- `/context` shows how much of the working memory is in use, and what it's used for.
-- The figure now has a caption, like the example in Step 3.
+- `/context` shows how much of the working memory is in use, and what it's used for. The
+  **Context** panel on the right shows the same.
+- The figure now follows your rule. With the rule above, it has a caption like the example in
+  Step 3.
 - Your new rule in `CLAUDE.md`, in the **Changes** view.
 
 **If you code:** `/compact keep the figure decisions` summarises the conversation, keeping what you
@@ -329,17 +361,8 @@ Commit the script, the figure and the CLAUDE.md change with a clear message, and
 
 **You should see:** the PR merged, and `outputs/before_after.png` on your `main` branch.
 
-**What else Claude Code can do** (a 2-minute tour from the presenters): *sub-agents* (helpers with
-their own memory), *skills* (reusable instructions), *MCP* (connections to other tools and data
-services), *hooks* (scripts that run automatically at set moments) and GitHub Actions. You can try
-them in Step 8.
-
 **Learn more:** Claude Code 101,
-["Code review"](https://academy.claude.com/courses/claude-code-101/code-review),
-["Subagents"](https://academy.claude.com/courses/claude-code-101/subagents),
-["Skills"](https://academy.claude.com/courses/claude-code-101/skills),
-["MCP"](https://academy.claude.com/courses/claude-code-101/mcp) and
-["Hooks"](https://academy.claude.com/courses/claude-code-101/hooks).
+["Code review"](https://academy.claude.com/courses/claude-code-101/code-review).
 
 **Next →** [Step 6: Brief it, then walk away](#step-6-brief-it-then-walk-away) · [All steps](README.md#your-steps)
 
@@ -361,9 +384,12 @@ and what to do when unsure.
 
 **Do this**
 
-1. Start a **new session** on this repo. It starts from your updated `main` with an empty memory.
+1. Is your early-task session still working? Press its stop button first: two busy sessions use
+   your plan's allowance faster, and this build matters more. Stopping keeps everything it has
+   pushed, and you can tell it to carry on later.
+2. Start a **new session** on this repo. It starts from your updated `main` with an empty memory.
    Set the mode to **Plan**.
-2. Paste the brief:
+3. Paste the brief:
 
 ```text
 Build a small, reusable tool in this repo: explorer.py. Running `python explorer.py` should write
@@ -391,15 +417,15 @@ First show me your plan. Once I approve it, work without asking me questions: re
 REPORT.md, and open every figure to check it before moving on.
 ```
 
-3. Check the plan. Does it leave out the "no data" values (−999 in the images, 255 in the severity
+4. Check the plan. Does it leave out the "no data" values (−999 in the images, 255 in the severity
    map), convert the glider coordinates, work out areas from pixel counts (one pixel = 0.01 ha), use
    one shared colour scale, and include tests? If not, tell it.
-4. Switch the mode to **Auto** and reply `Approved. Go ahead.`
-5. Wait for the first commit, then go to morning tea. It keeps working in the cloud even if you close
-   your laptop.
+5. Switch the mode to **Auto** and reply `Approved. Go ahead.`
+6. Once it's working (installing packages or writing code), go to morning tea. It keeps working in
+   the cloud even if you close your laptop.
 
-**You should see:** a to-do list and a first push. At morning tea, open the **Code** tab in the
-Claude mobile app to watch it, or to answer it if it asks something.
+**You should see:** a to-do list, then its first commits. At morning tea, open the **Code** tab in
+the Claude mobile app to watch it, or to answer it if it asks something.
 
 **What it should make:** something like these two pictures, plus the table in Step 7.
 
@@ -430,7 +456,11 @@ the numbers, then get a fresh pair of eyes.
 
 1. **Read what changed.** Open the pull request on GitHub, then **Files changed**. Read `REPORT.md`
    and look at the figures. Do they look like the examples in [Step 6](#step-6-brief-it-then-walk-away)?
-2. **Check the numbers.** Compare your `severity_summary.csv` with these answers:
+   GitHub shows `glider_map.html` as code, not as a map. To see the map, ask your Step 6 session
+   for *"the GitHub link to outputs/glider_map.html on your branch"*. Open the link, click the
+   download arrow next to **Raw**, then open the downloaded file in your browser.
+2. **Check the numbers.** First, guess: from your Step 3 figure, roughly what share of the
+   20 × 20 km square burnt? Then compare your `severity_summary.csv` with these answers:
 
    | Fire severity | Area (ha) | Mean NDVI 2019 | 2020 | 2025 | Glider records 2000–2019 |
    |---|---:|---:|---:|---:|---:|
@@ -443,6 +473,11 @@ the numbers, then get a fresh pair of eyes.
    Do yours match? If not, ask Claude why. The usual reasons are "no data" pixels counted as data,
    glider points not converted from latitude/longitude, or areas worked out in degrees. Full
    details: [CHECK_VALUES.md](CHECK_VALUES.md).
+
+   **Use your expertise:** the *high* class has the most glider records. Does that mean gliders
+   favour forest that burns hot? Think about each class's size, how much of it is forest, and where
+   people go looking for gliders. Then read the second discussion in
+   [CHECK_VALUES.md](CHECK_VALUES.md).
 3. **Get a fresh pair of eyes.** Start a **new session** in **Plan** mode. It has no memory of
    building the code, so it reviews it with fresh eyes:
 
@@ -466,24 +501,127 @@ Claude Code 101, ["Code review"](https://academy.claude.com/courses/claude-code-
 
 ### Step 8: Make it yours
 
-*11:45 · 10 minutes*
+*11:45 · 10 minutes, then it works through the closing talk · mode: **Plan**, then **Auto***
 
-**What you'll do:** pick one thing to try, and write the prompt in your own words. You know what a
-good brief looks like now.
+**What you'll do:** brief Claude on a question from your own work, using open data, and leave it
+working through the closing talk.
 
-**Back to your early task (try this first)**
+**Why it matters:** you know your own field. Trying Claude on your own question, in your own words,
+is how you'll find out whether it helps your work. You've practised the rest: brief it, read the
+plan, check the result.
 
-- Open the session from the [early task](#early-task-let-claude-surprise-you). Ask: *"Summarise
-  what you built, how to run it, and how you checked it."* Look at what it made.
-- Check it the way you did in Step 7: what changed, does it run, and are the numbers and units
-  believable? What would you need to see before you showed it to a colleague?
-- Compare the one-line request with your Step 6 brief. Which result can you trust more, and why?
-  Then ask the early-task session for one improvement.
+**First, two minutes on your early task** (on the shared screen). It got one open sentence; your
+Step 6 build got a full brief. Which result could you check, and trust? The presenters' early-task
+example, the Blue Mountains page, looks polished, yet it reports that its severity map agrees with
+FESM's class on only 42.6% of the area it compares. Would you publish it? What would you check
+first?
 
-**Or extend your explorer**
+**Do this**
+
+1. Start a **new session** on this repo, in **Plan** mode.
+2. Copy this brief, replace each part in [square brackets] with your own, and send it. Use the
+   question you brought ([setup step 8](SETUP.md#8-bring-a-question-from-your-own-work)), or any
+   small question about a place you know.
+
+```text
+I'm a remote sensing scientist. This is a new question from my own work, separate from the
+Tallaganda project, but follow the figure and checking rules in CLAUDE.md.
+
+Question: [your question]
+Place: [a place name, or a box in longitude and latitude]
+Dates: [the dates or seasons to compare]
+Data: open data only, such as Sentinel-2 from Digital Earth Australia
+(https://explorer.dea.ga.gov.au/stac), or Element 84 Earth Search outside Australia
+(https://earth-search.aws.element84.com/v1). Download only what this needs.
+Make: [one figure, table or map], saved in outputs/my_question/, plus a short REPORT.md there that
+says how each number was calculated and what you assumed.
+Check: [something you already know about this place, to compare the result with]
+
+Keep it small: about 20 minutes of work. Don't commit the downloaded images, only the code and
+the outputs. Show me your plan first.
+```
+
+3. Read the plan. Does it use the data, place and dates you meant, and say how it will check the
+   result? Tell it what to change, then switch to **Auto** and reply `Approved. Go ahead.`
+4. Leave it working through the closing talk.
+
+**You should see:** a plan you understand, then Claude searching for and downloading images of
+your place.
+
+**Afterwards** (at 12:15 if there's time, or at home): open the session and ask *"What did you
+make, and how did you check it?"* Check it the way you did in Step 7. Then finish this sentence for
+yourself: *"Next week, when I …, I'll try Claude Code on …"*
+
+**Next →** [After the workshop](#after-the-workshop) · [All steps](README.md#your-steps)
+
+---
+
+## After the workshop
+
+- Your sessions are still there. Open your Step 8 session to see what it made, and keep building
+  on your early task if you like.
+- This repo is private and yours to keep. Keep the attributions in `data/ATTRIBUTION.md` with
+  anything you share.
+
+### Start your own project
+
+1. Make a new private repo on GitHub for one project
+   ([how](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)).
+2. Let Claude see it: add it to the Claude GitHub App, as in
+   [setup step 5](SETUP.md#5-let-claude-see-your-copy-and-nothing-else).
+3. Copy `CLAUDE.md` from this repo, and change it to describe your project, your data and your
+   rules.
+4. Start a session in **Plan** mode, and adapt the Step 8 brief.
+
+**Open data to start with.** These are STAC catalogues: searchable lists of satellite images that
+Claude can query. Each one answered from a Claude Code cloud computer on 6 November 2026.
+
+| Catalogue | What it has |
+|---|---|
+| [Digital Earth Australia](https://explorer.dea.ga.gov.au/stac) | Analysis-ready Sentinel-2 and Landsat for Australia |
+| [Element 84 Earth Search](https://earth-search.aws.element84.com/v1) | Sentinel-2 and Landsat, worldwide |
+| [Copernicus Data Space Ecosystem](https://stac.dataspace.copernicus.eu/v1) | The Sentinel archives of the EU's Copernicus programme |
+| [Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/api/stac/v1) | Sentinel-2, Landsat and many other datasets |
+
+**What data can you use with Claude?**
+
+- **Open data:** yes.
+- **Anything else** (unpublished results, personal information, licensed or commercial data,
+  threatened-species locations, or Indigenous data): check your organisation's policy, the data's
+  licence and any agreements first. For Indigenous data, follow the
+  [CARE principles](https://doi.org/10.5334/dsj-2020-043). The closing talk shows another route:
+  open AI models on your own hardware.
+
+**Using it in your research**
+
+- Keep the code, data sources and outputs in Git, so every number can be traced and made again.
+- Say how you used AI in your methods or acknowledgements. Journals set their own rules: for
+  example, [Nature's](https://doi.org/10.1038/d41586-023-00191-1) say an AI tool can't be an
+  author, and its use must be documented.
+
+### Keep learning, for free
+
+[Claude Code 101](https://academy.claude.com/courses/claude-code-101) (1.5 hours) and
+[Claude Code in Action](https://academy.claude.com/courses/claude-code-in-action) (1 hour), then
+[Introduction to agent skills](https://academy.claude.com/courses/introduction-to-agent-skills) and
+[Introduction to subagents](https://academy.claude.com/courses/introduction-to-subagents).
+
+**What else Claude Code can do:** *sub-agents* (helpers with their own memory), *skills* (reusable
+instructions), *MCP* (connections to other tools and data services), *hooks* (scripts that run
+automatically at set moments) and GitHub Actions. Claude Code 101 has lessons on the first four:
+["Subagents"](https://academy.claude.com/courses/claude-code-101/subagents),
+["Skills"](https://academy.claude.com/courses/claude-code-101/skills),
+["MCP"](https://academy.claude.com/courses/claude-code-101/mcp) and
+["Hooks"](https://academy.claude.com/courses/claude-code-101/hooks).
+
+### More to try
+
+**Extend your explorer**
 
 - *Since the fire:* add the glider records from 2020 onwards as a second count. Where have gliders
-  been seen since the fire?
+  been seen since the fire? Read the second discussion in [CHECK_VALUES.md](CHECK_VALUES.md) first.
+- *Glider density:* count the records per 1,000 ha of tree cover in each class, using
+  `data/land_cover_2020.tif`, and compare with CHECK_VALUES.md.
 - *Location accuracy:* leave out records whose location is uncertain by more than 1 km, and show how
   the counts change.
 - *Moisture:* add NDMI next to NDVI.
@@ -504,22 +642,11 @@ good brief looks like now.
   ask Claude to "use the reviewer subagent on this PR". Claude Code 101:
   ["Subagents"](https://academy.claude.com/courses/claude-code-101/subagents).
 
-**Next →** [After the workshop](#after-the-workshop) · [All steps](README.md#your-steps)
+### Tidy up
 
----
-
-## After the workshop
-
-- Your early-task session is still there: you can keep building on it.
-- This repo is private and yours to keep. Keep the attributions in `data/ATTRIBUTION.md` with
-  anything you share.
-- Tidy up when you're done: archive your sessions at claude.ai/code. If you like, remove this repo
-  from the Claude GitHub App on GitHub (**Settings → Applications → Installed GitHub Apps → Claude →
-  Configure**). Cancel the Pro plan if you only got it for today.
-- Keep learning, for free:
-  [Claude Code 101](https://academy.claude.com/courses/claude-code-101) (1.5 hours) and
-  [Claude Code in Action](https://academy.claude.com/courses/claude-code-in-action) (1 hour), then
-  [Introduction to agent skills](https://academy.claude.com/courses/introduction-to-agent-skills) and
-  [Introduction to subagents](https://academy.claude.com/courses/introduction-to-subagents).
+Archive your sessions at claude.ai/code when you're done. If you like, remove this repo from the
+Claude GitHub App on GitHub (**Settings → Applications → Installed GitHub Apps → Claude →
+Configure**). Claude Code on the web needs a paid plan: if you'd like to keep going, check whether
+your organisation offers one before you cancel the Pro plan you got for today.
 
 **You've finished.** Thank you for coming! · [All steps](README.md#your-steps)

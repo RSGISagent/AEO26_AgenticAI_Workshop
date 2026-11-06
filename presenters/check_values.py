@@ -7,10 +7,12 @@ The script is deliberately plain and independent of any agent's code.
 For each NSW FESM 2019/20 severity class it reports the area (ha, from 10 m EPSG:3577 pixels
 of 0.01 ha), the share of the study area, the mean NDVI in autumn 2019, 2020 and 2025, and the
 number of greater glider records inside the class (2000-2019, 2020 onwards, and all years).
+A second table puts the 2000-2019 records per 1,000 ha of tree cover (ESA WorldCover 2020),
+with the records per year, for the "what do the glider counts mean?" discussion.
 
 Usage
 -----
-python presenters/check_values.py            # print the Markdown table
+python presenters/check_values.py            # print the Markdown tables
 python presenters/check_values.py --out table.md
 """
 
@@ -33,6 +35,7 @@ YEARS = (2019, 2020, 2025)
 S2_NODATA = -999
 FESM_NODATA = 255
 PIXEL_HA = 0.01  # a 10 m x 10 m pixel
+TREE_COVER = 10  # ESA WorldCover 2020 class code for tree cover
 CLASSES: dict[int, str] = {0: "unburnt / outside", 2: "low", 3: "moderate", 4: "high", 5: "extreme"}
 
 
@@ -48,6 +51,17 @@ class ClassSummary:
     gliders_2000_2019: int
     gliders_2020_on: int
     gliders_all: int
+
+
+@dataclass(frozen=True)
+class ForestDensity:
+    """Greater glider records from 2000-2019 per area of forest in one fire-severity class."""
+
+    name: str
+    area_ha: float
+    tree_pct: float
+    gliders_on_trees: int
+    per_1000_ha_trees: float
 
 
 def read_ndvi(path: Path) -> np.ndarray:
@@ -110,6 +124,48 @@ def summarise(data: Path = DATA) -> tuple[list[ClassSummary], dict[str, int]]:
     return [summary(code, name) for code, name in CLASSES.items()], totals
 
 
+def forest_density(data: Path = DATA) -> tuple[list[ForestDensity], dict[int, int]]:
+    """Glider records 2000-2019 per 1,000 ha of tree cover in each class, and records per year.
+
+    Raw counts mix three things: how big each class is, how much of it is forest, and where people
+    looked. Dividing by the area of tree cover removes the first two; the records per year show the
+    third (survey effort jumped after the fire).
+    """
+    with rasterio.open(data / "fire_severity_2019_20.tif") as ds:
+        fesm, transform, shape = ds.read(1), ds.transform, ds.shape
+    with rasterio.open(data / "land_cover_2020.tif") as ds:
+        tree = ds.read(1) == TREE_COVER
+    pix = glider_pixels(data / "glider_records.csv", transform, shape)
+    rows, cols, years = pix[:, 0], pix[:, 1], pix[:, 2]
+    pre_fire_on_trees = tree[rows, cols] & (years >= 2000) & (years <= 2019)
+    glider_class = fesm[rows, cols]
+
+    densities = []
+    for code, name in CLASSES.items():
+        in_class = fesm == code
+        area_ha = float(in_class.sum()) * PIXEL_HA
+        tree_ha = float((in_class & tree).sum()) * PIXEL_HA
+        n = int((pre_fire_on_trees & (glider_class == code)).sum())
+        densities.append(ForestDensity(name, area_ha, 100.0 * tree_ha / area_ha, n, 1000.0 * n / tree_ha))
+    per_year = {year: int((years == year).sum()) for year in range(2017, int(years.max()) + 1)}
+    return densities, per_year
+
+
+def density_markdown(densities: Sequence[ForestDensity], per_year: Mapping[int, int]) -> str:
+    """Format the forest-density table and the records per year as Markdown."""
+    header = (
+        "| Severity | Area (ha) | Tree cover | Glider records 2000-2019 on tree cover "
+        "| Per 1,000 ha of tree cover |\n|---|---:|---:|---:|---:|\n"
+    )
+    body = "".join(
+        f"| {d.name} | {d.area_ha:,.0f} | {d.tree_pct:.0f} % | {d.gliders_on_trees} "
+        f"| {d.per_1000_ha_trees:.1f} |\n"
+        for d in densities
+    )
+    years = ", ".join(f"{year}: {n}" for year, n in per_year.items())
+    return header + body + f"\n- Glider records per year: {years}.\n"
+
+
 def to_markdown(classes: Sequence[ClassSummary], totals: Mapping[str, int]) -> str:
     """Format the reference values as a Markdown table plus totals."""
     burnt = [c for c in classes if c.code != 0]
@@ -146,6 +202,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser.add_argument("--out", type=Path, help="also write the Markdown table here")
     args = parser.parse_args(argv)
     text = to_markdown(*summarise(args.data))
+    text += "\nGlider records per area of forest (CHECK_VALUES.md, second discussion):\n\n"
+    text += density_markdown(*forest_density(args.data))
     print(text, end="")
     if args.out:
         args.out.write_text(text, encoding="utf-8")
