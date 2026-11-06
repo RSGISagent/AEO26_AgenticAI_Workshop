@@ -78,9 +78,12 @@ probably use the Sentinel-2 data in `data/`, although with **Full** network acce
 download fresh images. Either is fine, and worth pointing out: context shapes what the
 agent does.
 
-`examples/early_task/` holds a later test of a similar request, in a session with no repo and every
-website allowed: a screenshot from early in the session (shown in the workbook's early task) and
-the web page it made, about the January 2025 Los Angeles fires (zipped, with a preview picture).
+`examples/early_task/` holds two presenter tests. `session_start.png` is a screenshot from early in
+a test of a similar request, in a session with no repo and every website allowed (shown in the
+workbook's early task). `blue_mountains_demo.zip` is the web page from a later test with a longer
+request: Sentinel-2 burn severity for the 2019–20 Black Summer fires in the Greater Blue Mountains,
+NSW, compared with the NSW FESM severity map with 95% intervals, plus recovery to 2026, with the code
+and output for each step. `blue_mountains_preview.jpg` is its summary figure, shown in the workbook.
 
 ## Before Monday: checklist
 

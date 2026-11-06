@@ -111,16 +111,22 @@ installs packages and tests a small download. The **Context** panel on the right
 its working memory is in use. Your screen will differ: the model, the numbers and the environment
 name depend on your account.*
 
-**What that test made:** a web page about the January 2025 Los Angeles fires, with a
-before-and-after slider, burn-severity maps, and the code and output for each step.
+**What a longer request made:** a later test, with a longer request than the one above, made a web
+page about the 2019–20 Black Summer fires in the Greater Blue Mountains, NSW. It maps burn severity
+from Sentinel-2 images and compares it with the NSW Government's fire severity map (FESM, *Fire
+Extent and Severity Mapping*), with 95% intervals (the range the true value most likely lies in).
+It then follows the forest's recovery to 2026, and shows the code and output for each step.
 
-![The top of the demo page: the title, Burn severity of the January 2025 Los Angeles fires, above a before-and-after satellite image slider](examples/early_task/la_fires_demo_preview.jpg)
+![A summary figure in five panels: a false-colour satellite image of the Blue Mountains after the fires, burn-severity maps from the demo and from FESM in orange to dark red, a map of where the two differ in blue and red, and a chart of vegetation greenness from 2019 to 2026 for each severity class](examples/early_task/blue_mountains_preview.jpg)
 
-*The top of that page. On the real page you drag the handle to compare before and after the fires.*
+*A summary of the page's results: the burnt landscape on 30 Jan 2020 (a), burn severity from the
+demo (b) and from FESM (c), where they differ (d), and how greenness (NDVI, a satellite index of green leaves) recovered in each FESM
+severity class up to 2026 (e). The page itself adds a before-and-after slider and the code for each
+step.*
 
-**Try it yourself:** [download the page](https://github.com/RSGISagent/AEO26_AgenticAI_Workshop/raw/main/examples/early_task/la_fires_demo.zip)
-(a 7 MB zip file). Open the zip, then double-click `la_fires_demo.html`. It opens in your browser and
-works offline.
+**Try it yourself:** [download the page](https://github.com/RSGISagent/AEO26_AgenticAI_Workshop/raw/main/examples/early_task/blue_mountains_demo.zip)
+(a 6.7 MB zip file). Open the zip, then double-click `blue_mountains_demo.html`. It opens in your
+browser and works offline.
 
 **Come back to it** at morning tea (have a look from your phone), and in
 [Step 8](#step-8-make-it-yours), where you check it properly.
