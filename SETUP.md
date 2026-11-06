@@ -58,10 +58,6 @@ Have a guest pass from the presenters instead? Open its link and follow the prom
 You now have `github.com/<your-handle>/aeo26-workshop`, marked **Private**. Everything you do in the
 workshop is saved there, and only you can see it.
 
-<img src="examples/setup/3b_private_copy.png" alt="Your private copy on GitHub: aeo26-workshop, marked Private, with the workshop files" width="600">
-
-*Your copy on GitHub, marked **Private**, with all the workshop files.*
-
 *Why a copy and not a "fork"? A fork of a public repo is always public. A copy made from a template
 is yours, and it can be private.*
 
