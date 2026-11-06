@@ -131,7 +131,8 @@ one more reason never to paste passwords, keys or private data into Claude.*
 1. At [claude.ai/code](https://claude.ai/code), choose `aeo26-workshop` in the repository list.
 2. Check that the environment button under the message box says **AEO**. If it doesn't, click it
    and choose **AEO**.
-3. In the mode menu under the message box, choose **Plan**.
+3. In the mode menu at the right-hand end of the row under the message box, choose **Auto**. You'll
+   use it all morning. Can't see **Auto**? Tell a helper when you arrive.
 4. Send: `Hello! In one sentence, what is this repo for?`
 
 If Claude answers, you're done. See you on Monday!
@@ -155,8 +156,9 @@ If Claude answers, you're done. See you on Monday!
 - **Claude says a website is blocked, or it can't download data.** Check that the session uses your
   **AEO** environment with **Full** network access (step 6). In a running session, click the arrow
   next to the session title, then **Edit cloud environment**.
-- **Claude keeps asking for permission.** In **Accept edits** mode it asks before running each
-  command. That's normal: read the command, then approve it. **Auto** mode asks much less.
+- **Claude keeps asking for permission.** Check the mode menu at the right-hand end of the row under
+  the message box: it should say **Auto**. Other modes, such as **Accept edits**, stop to ask before
+  every command.
 - **Anything else.** Bring it on the day: helpers fix setups when the hands-on starts. You can also
   [open an issue](https://github.com/RSGISagent/AEO26_AgenticAI_Workshop/issues).
 

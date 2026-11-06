@@ -82,6 +82,8 @@ Afterwards: [after the workshop](WORKBOOK.md#after-the-workshop).
 ## Is it safe?
 
 - Claude works in a disposable computer in the cloud, not on your laptop.
+- It works in **Auto** mode, so it doesn't stop to ask before each step. An automatic safety check
+  looks at every action, and everything happens in that cloud computer.
 - For the workshop you give that computer **Full** network access (setup step 6), so it can
   download satellite data from any website.
 - Claude can see only the one repo you allow (your private copy). Your GitHub password never goes

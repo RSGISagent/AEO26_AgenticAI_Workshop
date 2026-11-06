@@ -10,6 +10,8 @@ the Claude Academy intro courses. Each idea is shown on the shared screen and tr
 straight away, in about 5 minutes. Part 2 is a practical build that runs over morning tea and is
 checked afterwards. The analysis is deliberately
 simple (indices, areas, counts). What participants practise is planning, checking and reviewing.
+Everyone works in **Auto** mode (**Plan** only when planning or reviewing), so nothing waits for
+approval.
 
 ## Why it's this simple (sanity check, 5 Nov 2026)
 
@@ -87,8 +89,9 @@ the web page it made, about the January 2025 Los Angeles fires (zipped, with a p
    "Make my private copy" link in SETUP.md doesn't work.
 3. With a **fresh** Pro account and a **fresh** GitHub account, do SETUP.md and time it. The target
    is under 20 minutes, with no help.
-4. On that fresh account, note whether **Auto** appears in the mode menu. If it doesn't, people will
-   have to approve commands from their phones over morning tea (the workbook covers this).
+4. On that fresh account, check that **Auto** appears in the mode menu. The workshop runs in
+   **Auto** throughout (**Plan** only for planning and the review), so if it's missing, find out
+   why before Monday.
 5. Do the whole workbook once and time each step against the run sheet. Compare
    `outputs/severity_summary.csv` with CHECK_VALUES.md.
 6. Check the Pro usage meter after that run, so you know a participant won't hit the limit.

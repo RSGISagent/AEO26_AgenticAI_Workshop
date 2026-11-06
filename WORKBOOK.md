@@ -23,13 +23,17 @@ your own hardware.
 ## How this workbook works
 
 - **Grey boxes are prompts.** Copy one, paste it into the Claude Code message box, and send it.
-- **Each step says which mode to use.** The mode menu is under the message box:
+- **Work in Auto mode.** The mode menu is at the right-hand end of the row under the message box
+  (not the environment button on the left, which should say **AEO**). Today you use two modes:
 
   | Mode | What Claude can do without asking you |
   |---|---|
-  | **Plan** | Read and suggest. It changes nothing |
-  | **Accept edits** | Change files. It asks before it runs any command, and you approve each one |
-  | **Auto** | Everything, with an automatic safety check on each action. Use it when you walk away |
+  | **Auto** | Everything, with an automatic safety check on each action. Your default all morning |
+  | **Plan** | Read and suggest. It changes nothing. Use it when a step asks for a plan |
+
+  Claude works in a disposable cloud computer, separate from your laptop, that holds only your copy
+  of this repo. That's why it can work fast without stopping to ask. You'll also see **Accept edits**
+  in the menu: we don't use it today, because it stops to ask before every command.
 
 - **"You should see"** tells you what success looks like. The pictures are example results: yours
   will differ a little, and that's fine. In the room, put up a 🟩 sticky note if you're there, or 🟥
@@ -50,7 +54,7 @@ your own hardware.
 2. In the repo list, pick **this repo** (`<your-handle>/aeo26-workshop`, marked private).
 3. Check that the environment button under the message box says **AEO**, the environment you made
    in [setup step 6](SETUP.md#6-set-up-your-cloud-environment).
-4. Set the mode to **Plan**.
+4. Set the mode to **Auto**.
 5. Send: `Hello! In one sentence, what is this repo for?`
 
 **You should see:** a reply within a minute or two. The first start takes longer while the cloud
@@ -75,8 +79,7 @@ with a more critical eye.
 
 1. Go back to [claude.ai/code](https://claude.ai/code) and start a **new session** on this repo, in
    your **AEO** environment. Your first session stays as it is.
-2. Set the mode to **Auto**. If **Auto** isn't in the menu, choose **Accept edits**, then check on it
-   between steps, because it will wait for you to approve each command.
+2. Check that the mode is **Auto**.
 3. Paste this exactly as it is, and send it:
 
 ```text
@@ -135,7 +138,7 @@ works offline.
 
 ### Step 1: Meet the agent
 
-*09:45 · 5 minutes · mode: **Plan***
+*09:45 · 5 minutes · mode: **Auto***
 
 **What you'll do:** ask Claude to explain the repo, and watch how it works it out.
 
@@ -179,7 +182,7 @@ built.
 **Why it matters:** checking a plan takes a minute; fixing a wrong build takes ten. Say what "done"
 looks like, and ask how Claude will check it.
 
-**Do this**
+**Do this:** switch the mode to **Plan**, then send:
 
 ```text
 Plan a Python script, before_after.py, that shows the study area in autumn 2019 (before the fire),
@@ -207,7 +210,7 @@ panel. The coordinates are latitude/longitude, so reproject them to the rasters'
 
 ### Step 3: Let it build, and make it check its own work
 
-*09:55 · 10 minutes · mode: **Accept edits***
+*09:55 · 10 minutes · mode: **Auto***
 
 **What you'll do:** let Claude build the figure, then make it check its own result.
 
@@ -217,14 +220,14 @@ stop and say what you want instead.
 
 **Do this**
 
-1. Switch the mode to **Accept edits**, then send:
+1. Switch the mode back to **Auto**, then send:
 
 ```text
 The plan is good. Build it.
 ```
 
-2. Watch it work. When it asks to run a command (to install packages or run the script), read the
-   command, then approve it. If it offers to always allow that command, you can say yes.
+2. Watch it work. It installs packages, writes the script and runs it without stopping to ask.
+   Click a grey block to see the exact command it ran and what it printed.
 3. Then ask it to check its work:
 
 ```text
@@ -252,7 +255,7 @@ and the Claude Code [best practices](https://code.claude.com/docs/en/best-practi
 
 ### Step 4: Memory and context
 
-*10:05 · 5 minutes · mode: **Accept edits***
+*10:05 · 5 minutes · mode: **Auto***
 
 **What you'll do:** look at Claude's working memory, then add a standing rule that it follows from
 now on.
@@ -296,7 +299,7 @@ Claude Code in Action,
 
 ### Step 5: Review, commit, merge
 
-*10:10 · 5 minutes · mode: **Accept edits***
+*10:10 · 5 minutes · mode: **Auto***
 
 **What you'll do:** read what Claude changed, then add it to your project.
 
@@ -385,9 +388,7 @@ REPORT.md, and open every figure to check it before moving on.
 3. Check the plan. Does it leave out the "no data" values (−999 in the images, 255 in the severity
    map), convert the glider coordinates, work out areas from pixel counts (one pixel = 0.01 ha), use
    one shared colour scale, and include tests? If not, tell it.
-4. Switch the mode to **Auto** and reply `Approved. Go ahead.` If **Auto** isn't in the menu, use
-   **Accept edits** and keep the session open on your phone, because it will stop at each command
-   until you approve it.
+4. Switch the mode to **Auto** and reply `Approved. Go ahead.`
 5. Wait for the first commit, then go to morning tea. It keeps working in the cloud even if you close
    your laptop.
 
@@ -412,7 +413,7 @@ and ["Permission modes"](https://academy.claude.com/courses/claude-code-in-actio
 
 ### Step 7: Trust, but verify
 
-*11:25 · 20 minutes · mode: **Plan**, then **Accept edits***
+*11:25 · 20 minutes · mode: **Plan**, then **Auto***
 
 **What you'll do:** check the work you didn't watch, then merge it.
 
@@ -445,8 +446,8 @@ nodata and map projections, check that every number in REPORT.md matches severit
 run the tests. List the problems in order of importance. Don't change anything.
 ```
 
-4. **Fix and merge.** Ask for the most important fix (in that session with **Accept edits**, or as a
-   comment on the PR), then merge the PR.
+4. **Fix and merge.** Switch that session to **Auto** and ask for the most important fix (or ask for
+   it in a comment on the PR), then merge the PR.
 
 **You should see:** the PR merged, and your numbers matching the answers, or you know why they
 don't.
