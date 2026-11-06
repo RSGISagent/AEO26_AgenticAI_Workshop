@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 .pytest_cache/
 .ruff_cache/
+# Satellite images downloaded for your own questions (WORKBOOK Step 8): not committed
+downloads/

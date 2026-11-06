@@ -525,20 +525,22 @@ first?
 
 ```text
 I'm a remote sensing scientist. This is a new question from my own work, separate from the
-Tallaganda project, but follow the figure and checking rules in CLAUDE.md.
+Tallaganda project. The files in data/ are for Tallaganda only, and so is CLAUDE.md's 0.01 ha
+pixel rule: work out areas from each image's own pixel size. Follow CLAUDE.md's figure and
+checking rules.
 
-Question: [your question]
+Question: [your question, with any threshold you'd use, such as "water covers more than 1 km²"]
 Place: [a place name, or a box in longitude and latitude]
-Dates: [the dates or seasons to compare]
+Dates: [the dates or seasons to compare: a handful, not dozens]
 Data: open data only, such as Sentinel-2 from Digital Earth Australia
 (https://explorer.dea.ga.gov.au/stac), or Element 84 Earth Search outside Australia
-(https://earth-search.aws.element84.com/v1). Download only what this needs.
+(https://earth-search.aws.element84.com/v1). Read only the area you need from each image.
 Make: [one figure, table or map], saved in outputs/my_question/, plus a short REPORT.md there that
 says how each number was calculated and what you assumed.
 Check: [something you already know about this place, to compare the result with]
 
-Keep it small: about 20 minutes of work. Don't commit the downloaded images, only the code and
-the outputs. Show me your plan first.
+Keep it small: about 20 minutes of work. Keep any downloaded images in downloads/ and don't commit
+them: commit only the code and the outputs. Show me your plan first.
 ```
 
 3. Read the plan. Does it use the data, place and dates you meant, and say how it will check the
