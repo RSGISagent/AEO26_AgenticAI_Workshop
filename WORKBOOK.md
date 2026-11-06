@@ -529,7 +529,7 @@ Tallaganda project. The files in data/ are for Tallaganda only, and so is CLAUDE
 pixel rule: work out areas from each image's own pixel size. Follow CLAUDE.md's figure and
 checking rules.
 
-Question: [your question, with any threshold you'd use, such as "water covers more than 1 km²"]
+Question: [your question, with a rule for anything you count, such as "water covers more than 1 km²"]
 Place: [a place name, or a box in longitude and latitude]
 Dates: [the dates or seasons to compare: a handful, not dozens]
 Data: open data only, such as Sentinel-2 from Digital Earth Australia
@@ -539,8 +539,9 @@ Make: [one figure, table or map], saved in outputs/my_question/, plus a short RE
 says how each number was calculated and what you assumed.
 Check: [something you already know about this place, to compare the result with]
 
-Keep it small: about 20 minutes of work. Keep any downloaded images in downloads/ and don't commit
-them: commit only the code and the outputs. Show me your plan first.
+Keep it small: about 20 minutes of work. Keep any downloaded images in downloads/ (add it to
+.gitignore if it isn't there) and don't commit them: commit only the code and the outputs. Show me
+your plan first.
 ```
 
 3. Read the plan. Does it use the data, place and dates you meant, and say how it will check the
