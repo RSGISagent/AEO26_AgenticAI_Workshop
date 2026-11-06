@@ -104,10 +104,9 @@ the web page it made, about the January 2025 Los Angeles fires (zipped, with a p
    doesn't, delete that line from Step 3.
 8. Send the pre-work email: SETUP.md (about 20 minutes), a personal Pro plan, a personal GitHub
    account, and no work accounts.
-9. Screenshots for SETUP.md: steps 1, 2, 4, 5 and 6 are in `examples/setup/`. Still to take: the
-   "Make my private copy" form, after ticking **Template repository** (item 2), so it shows the
-   template. Take it with the fresh test account (item 3) so no personal account name shows.
-   Optional: the GitHub app's **Only select repositories** screen, the mode menu, and the
+9. Screenshots for every SETUP.md step are in `examples/setup/`, with personal names covered.
+   Optional extras: the "Make my private copy" form showing the template (from the fresh test
+   account in item 3), the GitHub app's **Only select repositories** screen, the mode menu, and the
    **Changes** card with **Create PR**.
 10. On Sunday, do a full dry run with two or three people who don't code.
 

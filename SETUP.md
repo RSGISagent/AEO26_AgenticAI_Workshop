@@ -55,6 +55,10 @@ Have a guest pass from the presenters instead? Open its link and follow the prom
 You now have `github.com/<your-handle>/aeo26-workshop`, marked **Private**. Everything you do in the
 workshop is saved there, and only you can see it.
 
+<img src="examples/setup/3_private_copy.png" alt="Your private copy on GitHub: aeo26-workshop, marked Private, with the workshop files" width="600">
+
+*Your copy on GitHub, marked **Private**, with all the workshop files.*
+
 *Why a copy and not a "fork"? A fork of a public repo is always public. A copy made from a template
 is yours, and it can be private.*
 
@@ -116,24 +120,30 @@ satellite data.
 
 1. At [claude.ai/code](https://claude.ai/code), click the environment button under the message box.
    It may say **Default** or **Auto**.
+
+   <img src="examples/setup/6a_start_screen.png" alt="The new-session screen, with the environment button at the left under the message box" width="520">
+
 2. At the bottom of the list, choose **+ New environment**.
 
-   <img src="examples/setup/6a_environment_list.png" alt="The environment list, with New environment at the bottom" width="520">
+   <img src="examples/setup/6b_environment_list.png" alt="The environment list, with New environment at the bottom" width="520">
 
 3. Keep the **Cloud** tab, and type the name `AEO`.
+
+   <img src="examples/setup/6c_new_environment.png" alt="The New environment dialog, with the name AEO and the Network access row" width="520">
+
 4. Click **Network access**. It starts as **Limited**: open the list and choose **Full** ("Sessions
    can reach any domain"). Leave everything else as it is.
 
-   <img src="examples/setup/6b_new_environment.png" alt="The New environment dialog, with the name AEO and the Network access row" width="520">
+   <img src="examples/setup/6d_network_full.png" alt="The Network access list: None, Limited and Full, with Full ticked" width="520">
 
 5. Click **Add environment**. The button under the message box now says **AEO**.
 
-   <img src="examples/setup/6c_aeo_chosen.png" alt="The environment list with AEO ticked, and a settings gear next to it" width="520">
+   <img src="examples/setup/6e_aeo_chosen.png" alt="The environment list with AEO ticked, and a settings gear next to it" width="520">
 
 **Check it:** click the gear next to **AEO** in that list. **Network access** must say **Full**. If it
 says **Limited**, as in this picture, click it, choose **Full**, then click **Save changes**.
 
-<img src="examples/setup/6d_check_environment.png" alt="The Edit cloud environment dialog for AEO, with Network access still set to Limited" width="520">
+<img src="examples/setup/6f_check_environment.png" alt="The Edit cloud environment dialog for AEO, with Network access still set to Limited" width="520">
 
 
 *Full network access lets Claude reach any website. That's what it needs to fetch data, and it's
@@ -151,6 +161,11 @@ one more reason never to paste passwords, keys or private data into Claude.*
 3. In the mode menu at the right-hand end of the row under the message box, choose **Auto**. You'll
    use it all morning. Can't see **Auto**? Tell a helper when you arrive.
 4. Send: `Hello! In one sentence, what is this repo for?`
+
+<img src="examples/setup/7_say_hello.png" alt="A Claude Code session in the AEO environment on a private copy, with Claude's reply about the Black Summer fires and greater glider project" width="600">
+
+*A working session. The panel on the right shows the **AEO** environment and your copy, and Claude
+has read the repo. (This test sent `hello world`: any short message works.)*
 
 If Claude answers, you're done. See you on Monday!
 
