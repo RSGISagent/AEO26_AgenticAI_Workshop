@@ -46,8 +46,11 @@ Have a guest pass from the presenters instead? Open its link and follow the prom
 
 1. While signed in to GitHub, click this link:
    **[Make my private copy](https://github.com/new?template_owner=RSGISagent&template_name=AEO26_AgenticAI_Workshop&owner=@me&visibility=private&name=aeo26-workshop)**
-2. Check that **Owner** is you, that the name is `aeo26-workshop`, and that **Private** is selected.
-3. Click the button to create the repository.
+2. Check that the page names `RSGISagent/AEO26_AgenticAI_Workshop` as the template. If it doesn't,
+   and you see **Add README**, **Add .gitignore** and **Add license** options instead, it would make
+   an empty repo: use the steps under *The link doesn't work?* below.
+3. Check that **Owner** is you, that the name is `aeo26-workshop`, and that **Private** is selected.
+4. Click the button to create the repository.
 
 You now have `github.com/<your-handle>/aeo26-workshop`, marked **Private**. Everything you do in the
 workshop is saved there, and only you can see it.
