@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="112" viewBox="0 0 400 112" role="img" aria-label="Workbook: on the day, Monday 9 November from 09:35">
+  <title>Workbook: on the day, Monday 9 November from 09:35</title>
+  <rect width="400" height="112" rx="16" fill="#B84A00"/>
+  <circle cx="58" cy="56" r="30" fill="#FFFFFF" fill-opacity="0.16"/>
+  <g fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M58 42c-6-5-14-6-22-4v32c8-2 16-1 22 4c6-5 14-6 22-4V38c-8-2-16-1-22 4z"/>
+  <path d="M58 42v32"/>
+  </g>
+  <g fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif">
+    <text x="106" y="38" font-size="12.5" font-weight="600" letter-spacing="1.2">ON THE DAY</text>
+    <text x="106" y="72" font-size="31" font-weight="700">Workbook</text>
+    <text x="106" y="95" font-size="14.5">Monday 9 November, 09:35</text>
+  </g>
+  <path d="M362 44l12 12-12 12" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

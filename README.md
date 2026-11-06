@@ -10,7 +10,13 @@ with it. You describe what you want in plain English, the agent writes and runs 
 check the result. You don't need any coding experience. If you do code, there are harder tasks for
 you.
 
-**Start here → [Your steps](#your-steps)**
+<p align="center">
+  <a href="SETUP.md"><img src=".github/readme/setup.svg" alt="Setup: before the day, about 20 minutes at home" width="380"></a>
+  &nbsp;
+  <a href="WORKBOOK.md"><img src=".github/readme/workbook.svg" alt="Workbook: on the day, Monday 9 November from 09:35" width="380"></a>
+</p>
+
+<p align="center">Or see <a href="#your-steps">every step, in order</a>.</p>
 
 **The example:** Sentinel-2 satellite images from before the 2019–20 Black Summer fires, just after
 them, and five years later, for a forest area near Braidwood, NSW, together with fire-severity
