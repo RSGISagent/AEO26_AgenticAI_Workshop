@@ -117,10 +117,24 @@ satellite data.
 1. At [claude.ai/code](https://claude.ai/code), click the environment button under the message box.
    It may say **Default** or **Auto**.
 2. At the bottom of the list, choose **+ New environment**.
+
+   <img src="examples/setup/6a_environment_list.png" alt="The environment list, with New environment at the bottom" width="520">
+
 3. Keep the **Cloud** tab, and type the name `AEO`.
 4. Click **Network access**. It starts as **Limited**: open the list and choose **Full** ("Sessions
    can reach any domain"). Leave everything else as it is.
+
+   <img src="examples/setup/6b_new_environment.png" alt="The New environment dialog, with the name AEO and the Network access row" width="520">
+
 5. Click **Add environment**. The button under the message box now says **AEO**.
+
+   <img src="examples/setup/6c_aeo_chosen.png" alt="The environment list with AEO ticked, and a settings gear next to it" width="520">
+
+**Check it:** click the gear next to **AEO** in that list. **Network access** must say **Full**. If it
+says **Limited**, as in this picture, click it, choose **Full**, then click **Save changes**.
+
+<img src="examples/setup/6d_check_environment.png" alt="The Edit cloud environment dialog for AEO, with Network access still set to Limited" width="520">
+
 
 *Full network access lets Claude reach any website. That's what it needs to fetch data, and it's
 one more reason never to paste passwords, keys or private data into Claude.*
