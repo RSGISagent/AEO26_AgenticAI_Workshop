@@ -91,6 +91,12 @@ account.*
 2. Choose your personal account.
 3. Choose **Only select repositories**, pick `aeo26-workshop`, and install.
 
+<img src="examples/setup/5_github_connector.png" alt="The GitHub page in Claude's settings, with a Connect button for your account and an Install on GitHub button for the Claude GitHub App" width="600">
+
+*The same two steps in Claude's settings, on the GitHub page under **Your connectors**: **Connect**
+links your GitHub account (step 4), and **Install on GitHub** installs the app (this step). Without
+the app, Claude can't work in your private copy.*
+
 *Already installed the Claude app before, for example on another repo?* On GitHub, go to
 **Settings → Applications → Installed GitHub Apps → Claude → Configure**. Add `aeo26-workshop` under
 **Only select repositories**, and click **Save**.
@@ -105,12 +111,13 @@ Claude works in a cloud computer that, by default, can reach only a short list o
 package sites and GitHub. The workshop needs **Full** network access, so Claude can download
 satellite data.
 
-1. At [claude.ai/code](https://claude.ai/code), click the environment button under the message box
-   (it says **Default**).
-2. At the bottom of the menu, choose **New environment**.
-3. Name it `AEO`.
-4. Click **Network access** and choose **Full**. Leave everything else as it is.
-5. Click **Add environment**.
+1. At [claude.ai/code](https://claude.ai/code), click the environment button under the message box.
+   It may say **Default** or **Auto**.
+2. At the bottom of the list, choose **+ New environment**.
+3. Keep the **Cloud** tab, and type the name `AEO`.
+4. Click **Network access**. It starts as **Limited**: open the list and choose **Full** ("Sessions
+   can reach any domain"). Leave everything else as it is.
+5. Click **Add environment**. The button under the message box now says **AEO**.
 
 *Full network access lets Claude reach any website. That's what it needs to fetch data, and it's
 one more reason never to paste passwords, keys or private data into Claude.*

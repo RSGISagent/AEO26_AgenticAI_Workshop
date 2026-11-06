@@ -78,7 +78,7 @@ agent does.
 
 `examples/early_task/` holds a later test of a similar request, in a session with no repo and every
 website allowed: a screenshot from early in the session (shown in the workbook's early task) and
-the web page it made, about the January 2025 Los Angeles fires.
+the web page it made, about the January 2025 Los Angeles fires (zipped, with a preview picture).
 
 ## Before Monday: checklist
 
@@ -101,7 +101,7 @@ the web page it made, about the January 2025 Los Angeles fires.
    doesn't, delete that line from Step 3.
 8. Send the pre-work email: SETUP.md (about 20 minutes), a personal Pro plan, a personal GitHub
    account, and no work accounts.
-9. Screenshots for SETUP.md: steps 1, 2 and 4 are in `examples/setup/`. Still to take: the
+9. Screenshots for SETUP.md: steps 1, 2, 4 and 5 are in `examples/setup/`. Still to take: the
    "Make my private copy" form, after ticking **Template repository** (item 2), so it shows the
    template. Take it with the fresh test account (item 3) so no personal account name shows. Also
    step 6's environment dialog with **Network access: Full**.

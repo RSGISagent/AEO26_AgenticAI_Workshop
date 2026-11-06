@@ -109,9 +109,15 @@ its working memory is in use. Your screen will differ: the model, the numbers an
 name depend on your account.*
 
 **What that test made:** a web page about the January 2025 Los Angeles fires, with a
-before-and-after slider, burn-severity maps, and the code and output for each step. To see it, open
-[`examples/early_task/la_fires_demo.html`](examples/early_task/la_fires_demo.html) on GitHub, click
-**Download raw file**, then open the downloaded file in your browser (about 10 MB).
+before-and-after slider, burn-severity maps, and the code and output for each step.
+
+![The top of the demo page: the title, Burn severity of the January 2025 Los Angeles fires, above a before-and-after satellite image slider](examples/early_task/la_fires_demo_preview.jpg)
+
+*The top of that page. On the real page you drag the handle to compare before and after the fires.*
+
+**Try it yourself:** [download the page](https://github.com/RSGISagent/AEO26_AgenticAI_Workshop/raw/main/examples/early_task/la_fires_demo.zip)
+(a 7 MB zip file). Open the zip, then double-click `la_fires_demo.html`. It opens in your browser and
+works offline.
 
 **Come back to it** at morning tea (have a look from your phone), and in
 [Step 8](#step-8-make-it-yours), where you check it properly.
