@@ -525,9 +525,8 @@ first?
 
 ```text
 I'm a remote sensing scientist. This is a new question from my own work, separate from the
-Tallaganda project. The files in data/ are for Tallaganda only, and so is CLAUDE.md's 0.01 ha
-pixel rule: work out areas from each image's own pixel size. Follow CLAUDE.md's figure and
-checking rules.
+Tallaganda project. The files in data/, and their 0.01 ha pixels, are for Tallaganda only: work
+out areas from each image's own pixel size. Follow CLAUDE.md's figure and checking rules.
 
 Question: [your question, with a rule for anything you count, such as "over 1 km² of water"]
 Place: [a place name, or a box in longitude and latitude]
